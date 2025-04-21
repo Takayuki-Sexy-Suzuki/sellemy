@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>商品一覧 - Sellemy</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <meta name="description" content="Sellemyの商品一覧ページ。美容・家電・日用品から、今おすすめの商品をやさしく紹介します。" />
+  <meta property="og:title" content="商品一覧 - Sellemy" />
+  <meta property="og:image" content="ogp-image.jpg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://takayuki-sexy-suzuki.github.io/sellemy/products.html" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXX');
+  </script>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Helvetica Neue', sans-serif;
+      background: #fefdfc;
+      color: #333;
+    }
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+      background-color: #ffffff;
+      border-bottom: 1px solid #eee;
+    }
+    .logo {
+      height: auto;
+      width: 300px;
+      max-height: 100px;
+      object-fit: contain;
+    }
+    nav a {
+      margin-left: 1.5rem;
+      text-decoration: none;
+      color: #888;
+      font-size: 0.95rem;
+    }
+    nav a:hover {
+      color: #333;
+    }
+    main {
+      padding: 2rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    h1 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1.5rem;
+    }
+    .product-card {
+      background: #fff;
+      border: 1px solid #eee;
+      border-radius: 8px;
+      padding: 1rem;
+      text-align: center;
+    }
+    .product-card img {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 0.5rem;
+    }
+    .product-card h2 {
+      font-size: 1rem;
+      margin: 0.5rem 0;
+    }
+    .product-card p {
+      color: #666;
+      font-size: 0.9rem;
+    }
+    footer {
+      text-align: center;
+      font-size: 0.8rem;
+      color: #aaa;
+      padding: 3rem 0 1rem;
+      border-top: 1px solid #eee;
+      margin-top: 4rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="sellemy-logo.png" alt="Sellemy logo" class="logo" />
+    <nav>
+      <a href="index.html">トップ</a>
+      <a href="category-beauty.html">美容</a>
+      <a href="category-home.html">家電</a>
+      <a href="category-daily.html">日用品</a>
+    </nav>
+  </header>
+  <main>
+    <h1>商品一覧</h1>
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="https://via.placeholder.com/200x200?text=商品1" alt="商品1">
+        <h2>ビタミンC美容液</h2>
+        <p>¥2,480（税込）</p>
+      </div>
+      <div class="product-card">
+        <img src="https://via.placeholder.com/200x200?text=商品2" alt="商品2">
+        <h2>コードレス加湿器</h2>
+        <p>¥4,280（税込）</p>
+      </div>
+      <div class="product-card">
+        <img src="https://via.placeholder.com/200x200?text=商品3" alt="商品3">
+        <h2>オメガ3サプリメント</h2>
+        <p>¥1,980（税込）</p>
+      </div>
+    </div>
+  </main>
+  <footer>
+    &copy; 2025 Sellemy. All rights reserved.
+  </footer>
+</body>
+</html>
