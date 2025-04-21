@@ -3,136 +3,126 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sellemy - 商品選びが、もっと楽に。</title>
+  <title>Sellemy – わたしに、ちょうどいい。</title>
 
-  <!-- ✅ SEO -->
-  <meta name="description" content="Sellemyは、楽天・Amazon・Yahooショッピングの商品を横断して集約・整理し、カテゴリ別にわかりやすく紹介する商品レビュー型サイトです。" />
-  <meta name="keywords" content="Sellemy,商品比較,レビュー,楽天,Amazon,Yahoo,買い物,人気商品,話題,自動収集" />
-  <meta name="author" content="Sellemy運営チーム" />
-
-  <!-- ✅ OGP -->
-  <meta property="og:title" content="Sellemy - 商品選びが、もっと楽に。" />
-  <meta property="og:description" content="人気商品を自動で収集。探す前に、Sellemyが探しておきました。" />
+  <!-- SEO / OGP -->
+  <meta name="description" content="Sellemy（セレミー）は、美容・家電・日用品などをやさしくセレクト。選び疲れをなくす、わたしに寄り添う情報ガイドです。" />
+  <meta name="keywords" content="Sellemy,セレミー,美容,家電,日用品,選び方,セレクト,比較" />
+  <meta property="og:title" content="Sellemy – わたしに、ちょうどいい。" />
+  <meta property="og:description" content="選び疲れをなくす、わたしに寄り添うガイド。" />
+  <meta property="og:image" content="ogp-image.jpg" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://takayuki-sexy-suzuki.github.io/sellemy/" />
-  <meta property="og:image" content="https://takayuki-sexy-suzuki.github.io/sellemy/ogp-image.jpg" />
-  <meta property="og:site_name" content="Sellemy" />
 
-  <!-- ✅ CSS -->
+  <!-- Style -->
   <style>
     body {
       margin: 0;
       font-family: 'Helvetica Neue', sans-serif;
-      background-color: #f9f9f9;
-      color: #222;
+      background: #fefdfc;
+      color: #333;
     }
 
     header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 2rem;
       background-color: #ffffff;
-      padding: 2rem 1rem;
       border-bottom: 1px solid #eee;
+    }
+
+    .logo {
+      height: 36px;
+    }
+
+    nav a {
+      margin-left: 1.5rem;
+      text-decoration: none;
+      color: #888;
+      font-size: 0.95rem;
+    }
+
+    nav a:hover {
+      color: #333;
+    }
+
+    .hero {
       text-align: center;
+      padding: 4rem 2rem 2rem;
     }
 
-    header h1 {
+    .hero h1 {
       font-size: 1.8rem;
-      margin-bottom: 0.5rem;
+      font-weight: normal;
+      margin-bottom: 1rem;
     }
 
-    header p {
+    .hero p {
       font-size: 1rem;
       color: #666;
-      max-width: 600px;
+      max-width: 520px;
       margin: 0 auto;
+      line-height: 1.8;
     }
 
-    main {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 0 1rem;
+    .links {
+      text-align: center;
+      margin-top: 3rem;
     }
 
-    h2 {
-      font-size: 1.3rem;
-      margin-top: 2.5rem;
-      border-left: 4px solid #007acc;
-      padding-left: 0.5rem;
-      color: #007acc;
-    }
-
-    ul {
-      list-style: none;
-      padding-left: 0;
-    }
-
-    li {
-      margin: 0.5rem 0;
-    }
-
-    a {
-      color: #007acc;
+    .links a {
+      display: inline-block;
+      margin: 0.5rem 1rem;
+      padding: 0.7rem 1.2rem;
+      background: #f5f5f5;
+      border-radius: 8px;
+      color: #555;
       text-decoration: none;
-      font-weight: 500;
+      font-size: 0.95rem;
+      transition: background 0.2s ease;
     }
 
-    a:hover {
-      text-decoration: underline;
+    .links a:hover {
+      background: #eaeaea;
     }
 
     footer {
       text-align: center;
-      margin-top: 3rem;
-      padding: 1rem 0;
-      font-size: 0.9rem;
-      color: #999;
+      font-size: 0.8rem;
+      color: #aaa;
+      padding: 3rem 0 1rem;
       border-top: 1px solid #eee;
-    }
-
-    .feature-list li::before {
-      content: '✔';
-      margin-right: 0.5rem;
-      color: #007acc;
-    }
-
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 1.5rem;
-      }
-
-      main {
-        padding: 0 1rem;
-      }
+      margin-top: 4rem;
     }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>あなたが探す前に、Sellemyが探しておきました。</h1>
-    <p>楽天・Amazon・Yahooショッピングで話題の商品を自動で収集・分類し、カテゴリ別に紹介する商品集約サイトです。</p>
+    <img src="sellemy-logo.png" alt="Sellemy logo" class="logo" />
+    <nav>
+      <a href="products.html">商品一覧</a>
+      <a href="category-beauty.html">美容</a>
+      <a href="category-home.html">家電</a>
+      <a href="category-daily.html">日用品</a>
+    </nav>
   </header>
 
-  <main>
-    <section>
-      <h2>🔍 商品を探す</h2>
-      <ul>
-        <li><a href="products.html">📦 商品一覧ページ</a></li>
-        <li><a href="category-beauty.html">💄 美容カテゴリ</a></li>
-        <li><a href="category-home.html">🏠 家電カテゴリ</a></li>
-        <li><a href="category-supplement.html">💊 サプリカテゴリ</a></li>
-      </ul>
-    </section>
+  <section class="hero">
+    <h1>わたしに、ちょうどいい。</h1>
+    <p>
+      暮らしの中で「どれを選べばいいか分からない」をやさしく解消する、<br />
+      美容・家電・日用品のための“わたしに寄り添う”情報ガイドです。
+    </p>
+  </section>
 
-    <section>
-      <h2>💡 Sellemyの特徴</h2>
-      <ul class="feature-list">
-        <li>人気商品を自動でピックアップ</li>
-        <li>カテゴリごとにスッキリ表示</li>
-        <li>毎日自動更新（将来的対応）</li>
-        <li>ECサイトを横断して探せる</li>
-      </ul>
-    </section>
-  </main>
+  <section class="links">
+    <a href="products.html">商品一覧ページへ</a>
+    <a href="category-beauty.html">美容カテゴリ</a>
+    <a href="category-home.html">家電カテゴリ</a>
+    <a href="category-daily.html">日用品カテゴリ</a>
+  </section>
 
   <footer>
     &copy; 2025 Sellemy. All rights reserved.
