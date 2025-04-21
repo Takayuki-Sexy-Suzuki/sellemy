@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>商品一覧 - Sellemy</title>
+  <title>読む - Sellemy</title>
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
-  <meta name="description" content="Sellemyの商品一覧ページ。美容・家電・日用品から、今おすすめの商品をやさしく紹介します。" />
-  <meta property="og:title" content="商品一覧 - Sellemy" />
+  <meta name="description" content="読むと、ちょっと選びやすくなる。Sellemyの特集・レビュー・読みものページ。" />
+  <meta property="og:title" content="読む - Sellemy" />
   <meta property="og:image" content="ogp-image.jpg" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://takayuki-sexy-suzuki.github.io/sellemy/products.html" />
+  <meta property="og:url" content="https://takayuki-sexy-suzuki.github.io/sellemy/articles.html" />
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -54,32 +54,38 @@
     }
     h1 {
       font-size: 1.5rem;
-      margin-bottom: 1rem;
+      margin-bottom: 0.5rem;
     }
-    .product-grid {
+    .intro {
+      font-size: 0.95rem;
+      color: #666;
+      margin-bottom: 2.5rem;
+    }
+    .article-list {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 2rem;
     }
-    .product-card {
+    .article-card {
       background: #fff;
       border: 1px solid #eee;
       border-radius: 8px;
-      padding: 1rem;
-      text-align: center;
+      padding: 1.2rem;
+      text-decoration: none;
+      color: #333;
+      transition: box-shadow 0.2s ease;
     }
-    .product-card img {
-      max-width: 100%;
-      height: auto;
-      margin-bottom: 0.5rem;
+    .article-card:hover {
+      box-shadow: 0 0 8px rgba(0,0,0,0.08);
     }
-    .product-card h2 {
-      font-size: 1rem;
-      margin: 0.5rem 0;
+    .article-card h2 {
+      font-size: 1.1rem;
+      margin-top: 0;
     }
-    .product-card p {
+    .article-card p {
       color: #666;
       font-size: 0.9rem;
+      margin: 0.5rem 0 0;
     }
     footer {
       text-align: center;
@@ -96,29 +102,28 @@
     <img src="sellemy-logo.png" alt="Sellemy logo" class="logo" />
     <nav>
       <a href="index.html">トップ</a>
+      <a href="products.html">探す</a>
       <a href="category-beauty.html">美容</a>
       <a href="category-home.html">家電</a>
       <a href="category-daily.html">日用品</a>
     </nav>
   </header>
   <main>
-    <h1>商品一覧</h1>
-    <div class="product-grid">
-      <div class="product-card">
-        <img src="https://via.placeholder.com/200x200?text=商品1" alt="商品1">
-        <h2>ビタミンC美容液</h2>
-        <p>¥2,480（税込）</p>
-      </div>
-      <div class="product-card">
-        <img src="https://via.placeholder.com/200x200?text=商品2" alt="商品2">
-        <h2>コードレス加湿器</h2>
-        <p>¥4,280（税込）</p>
-      </div>
-      <div class="product-card">
-        <img src="https://via.placeholder.com/200x200?text=商品3" alt="商品3">
-        <h2>オメガ3サプリメント</h2>
-        <p>¥1,980（税込）</p>
-      </div>
+    <h1>読むと、選びやすくなる。</h1>
+    <p class="intro">ちょっと迷った時の、ひと呼吸。Sellemyの特集や読みものを集めました。</p>
+    <div class="article-list">
+      <a href="#" class="article-card">
+        <h2>2025年春、美容液の選び方とおすすめ5選</h2>
+        <p>乾燥・毛穴・シミ、それぞれの悩みに合った選び方を徹底解説。</p>
+      </a>
+      <a href="#" class="article-card">
+        <h2>「加湿器迷子」を救う、やさしい比較記事</h2>
+        <p>超音波？スチーム？暮らし方に合った加湿器を紹介します。</p>
+      </a>
+      <a href="#" class="article-card">
+        <h2>今すぐ始めたい、飲むスキンケア3選</h2>
+        <p>オメガ3やビタミンの“飲む美容法”をレビュー付きで紹介。</p>
+      </a>
     </div>
   </main>
   <footer>
