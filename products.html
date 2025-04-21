@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>商品一覧 - Sellemy</title>
   <link rel="icon" href="favicon.ico" type="image/x-icon" />
-  <meta name="description" content="Sellemyの商品一覧ページ。美容・家電・日用品から、今おすすめの商品をやさしく紹介します。" />
+  <meta name="description" content="Sellemyの商品一覧ページ。なんとなく気になる、そんな気分に寄り添ったやさしいセレクト。" />
   <meta property="og:title" content="商品一覧 - Sellemy" />
   <meta property="og:image" content="ogp-image.jpg" />
   <meta property="og:type" content="website" />
@@ -54,7 +54,12 @@
     }
     h1 {
       font-size: 1.5rem;
-      margin-bottom: 1rem;
+      margin-bottom: 0.5rem;
+    }
+    .intro {
+      font-size: 0.95rem;
+      color: #666;
+      margin-bottom: 2.5rem;
     }
     .product-grid {
       display: grid;
@@ -67,6 +72,10 @@
       border-radius: 8px;
       padding: 1rem;
       text-align: center;
+      transition: box-shadow 0.2s ease;
+    }
+    .product-card:hover {
+      box-shadow: 0 0 8px rgba(0,0,0,0.08);
     }
     .product-card img {
       max-width: 100%;
@@ -96,13 +105,15 @@
     <img src="sellemy-logo.png" alt="Sellemy logo" class="logo" />
     <nav>
       <a href="index.html">トップ</a>
+      <a href="articles.html">読む</a>
       <a href="category-beauty.html">美容</a>
       <a href="category-home.html">家電</a>
       <a href="category-daily.html">日用品</a>
     </nav>
   </header>
   <main>
-    <h1>商品一覧</h1>
+    <h1>今日、ちょっと気になるもの</h1>
+    <p class="intro">選ぶ理由はまだなくても、なんとなく目にとめたくなる。そんな商品のセレクトです。</p>
     <div class="product-grid">
       <div class="product-card">
         <img src="https://via.placeholder.com/200x200?text=商品1" alt="商品1">
