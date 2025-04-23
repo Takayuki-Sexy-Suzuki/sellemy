@@ -3,21 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ビタミンC美容液おすすめ5選｜Sellemy</title>
-  <link rel="icon" href="../favicon.ico" type="image/x-icon" />
-  <meta name="description" content="毛穴・シミ・くすみに。ビタミンC美容液のおすすめと選び方をやさしく紹介します。">
-  <meta property="og:title" content="ビタミンC美容液おすすめ5選｜Sellemy" />
-  <meta property="og:description" content="毛穴・シミ・くすみに。ビタミンC美容液のおすすめと選び方をやさしく紹介します。">
-  <meta property="og:image" content="../ogp-image.jpg" />
+  <title>わたしにちょうどいい、ビタミンC美容液6選 - Sellemy</title>
+  <meta name="description" content="初心者にもやさしい、ビタミンC美容液を価格帯別に厳選紹介。プチプラから本格派まで。" />
+  <meta property="og:title" content="わたしにちょうどいい、ビタミンC美容液6選 - Sellemy" />
+  <meta property="og:description" content="プチプラ・定番・本格派まで、“わたしにちょうどいい”ビタミンC美容液をセレクト。" />
+  <meta property="og:image" content="/ogp-image.jpg" />
   <meta property="og:type" content="article" />
-  <meta property="og:url" content="https://takayuki-sexy-suzuki.github.io/sellemy/article/vitamin-c-serums.html" />
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXX"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXX');
-  </script>
+  <meta property="og:url" content="https://www.sellemy.jp/article/vitamin-c-serums.html" />
+  <link rel="stylesheet" href="/css/style.css" />
   <style>
     body {
       margin: 0;
@@ -25,181 +18,217 @@
       background: #fefdfc;
       color: #333;
     }
-    header, footer {
-      text-align: center;
-      padding: 2rem;
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 2rem;
+      background-color: #ffffff;
+      border-bottom: 1px solid #eee;
     }
-    header img {
-      width: 260px;
+    .logo {
       height: auto;
+      width: 300px;
+      max-height: 100px;
+      object-fit: contain;
+    }
+    nav a {
+      margin-left: 1.5rem;
+      text-decoration: none;
+      color: #888;
+      font-size: 0.95rem;
+    }
+    nav a:hover {
+      color: #333;
     }
     main {
-      max-width: 720px;
+      padding: 2rem;
+      max-width: 1000px;
       margin: 0 auto;
-      padding: 2rem 1rem;
     }
     h1 {
-      font-size: 1.8rem;
-      margin-bottom: 1.5rem;
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
     }
-    .intro, .section {
-      font-size: 1rem;
-      color: #555;
-      line-height: 1.7;
-      margin-bottom: 2rem;
+    .toc {
+      margin: 2rem 0;
     }
-    h2 {
-      font-size: 1.2rem;
-      margin-top: 2.5rem;
+    .toc ul {
+      list-style: none;
+      padding-left: 0;
     }
-    .product {
-      border: 1px solid #eee;
-      border-radius: 8px;
-      padding: 1rem;
-      margin: 1.5rem 0;
-      background: #fff;
+    .toc ul li {
+      margin: 0.5rem 0;
     }
-    .product img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 6px;
-      margin-bottom: 0.5rem;
-    }
-    .product-title {
-      font-weight: bold;
-      font-size: 1rem;
-      margin: 0.5rem 0 0.2rem;
-    }
-    .product-reason {
-      font-size: 0.95rem;
-      color: #666;
-      margin-bottom: 0.5rem;
-    }
-    .product-price {
-      color: #666;
-      font-size: 0.9rem;
-    }
-    .buy-links {
-      margin-top: 0.7rem;
-    }
-    .buy-links a {
-      display: inline-block;
-      margin-right: 0.5rem;
-      font-size: 0.85rem;
-      color: #fff;
-      background: #444;
-      padding: 0.4rem 0.8rem;
-      border-radius: 4px;
+    .toc a {
+      color: #0073aa;
       text-decoration: none;
     }
-    .buy-links a:hover {
-      background: #222;
+    .toc a:hover {
+      text-decoration: underline;
+    }
+    .item-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+    .item-card {
+      background: #fff;
+      border: 1px solid #eee;
+      border-radius: 8px;
+      padding: 1.2rem;
+      text-decoration: none;
+      color: #333;
+      transition: box-shadow 0.2s ease;
+    }
+    .item-card:hover {
+      box-shadow: 0 0 8px rgba(0,0,0,0.08);
+    }
+    .item-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 4px;
+      margin-bottom: 0.8rem;
+    }
+    .item-card h3 {
+      font-size: 1.1rem;
+      margin-top: 0;
+    }
+    .item-card p {
+      color: #666;
+      font-size: 0.9rem;
+      margin: 0.5rem 0 0;
+    }
+    .links a {
+      display: inline-block;
+      margin: 0.3rem 0.5rem 0 0;
+      background: #f5f5f5;
+      padding: 0.4rem 0.8rem;
+      border-radius: 6px;
+      text-decoration: none;
+      color: #555;
+      font-size: 0.85rem;
+    }
+    .links a:hover {
+      background: #e0e0e0;
+    }
+    footer {
+      text-align: center;
+      font-size: 0.8rem;
+      color: #aaa;
+      padding: 3rem 0 1rem;
+      border-top: 1px solid #eee;
+      margin-top: 4rem;
     }
   </style>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SZ5RQR5H7L"></script>
+  <script src="/js/ga4.js"></script>
 </head>
 <body>
   <header>
-    <a href="../index.html"><img src="../sellemy-logo.png" alt="Sellemy"></a>
+    <img src="/sellemy-logo.png" alt="Sellemy logo" class="logo" />
+    <nav>
+      <a href="/index.html">トップ</a>
+      <a href="/products.html">探す</a>
+      <a href="/articles.html">読む</a>
+    </nav>
   </header>
   <main>
-    <h1>ビタミンC美容液おすすめ5選</h1>
+    <h1>わたしにちょうどいい、ビタミンC美容液6選</h1>
+    <p>「くすみ」「毛穴」「透明感不足」…そんな肌悩みに応えるビタミンC美容液。<br>
+    でも種類が多すぎて、何を選べばいいかわからない——そんなあなたに、価格帯ごとにおすすめをまとめました。</p>
 
-    <p class="intro">
-      最近、肌の毛穴が目立ってきたかも。<br>
-      シミやくすみもなんとなく気になる。でも、美容液ってたくさんありすぎて、何を選べばいいか分からない…。<br><br>
-      そんなスキンケア初心者さんに向けて、<strong>“続けやすくて、肌にやさしい”</strong>ビタミンC美容液を5本だけ選びました。
-    </p>
+    <nav class="toc">
+      <strong>価格帯別で選ぶ</strong>
+      <ul>
+        <li><a href="#under-3000">〜¥3,000 プチプラ美容液</a></li>
+        <li><a href="#midrange">¥3,000〜¥5,000台 本命美容液</a></li>
+        <li><a href="#highend">¥6,000〜 本気ケア</a></li>
+      </ul>
+    </nav>
 
-    <div class="section">
-      <strong>どうやって選んだ？</strong><br>
-      肌悩み別（毛穴・くすみ・シミ）に効きやすく、<br>
-      敏感肌でも使いやすい処方で、価格も毎日使える範囲内（¥1,000〜¥8,000）に絞ってセレクトしています。
-    </div>
-
-    <div class="section">
-      <strong>初めてのビタミンC美容液、まずはこの5本から</strong><br>
-      「高濃度すぎてピリピリする」「何に効くか分からない」そんな不安を持つ方に向けて、<br>
-      “あなたにちょうどいいかも”な1本が見つかるはずです。
-    </div>
-
-    <!-- 商品① 無印 -->
-    <h2>01｜無印良品 敏感肌用薬用美白美容液</h2>
-    <div class="product">
-      <img src="https://via.placeholder.com/600x400?text=無印美白" alt="無印美白">
-      <div class="product-title">無印良品 敏感肌用薬用美白美容液</div>
-      <p class="product-reason">低刺激＆しっとり。とにかく肌にやさしい1本。乾燥とくすみが気になる方に。</p>
-      <div class="product-price">¥1,490（税込）</div>
-      <div class="buy-links">
-        <a href="https://amzn.to/4lEAcaI" target="_blank" rel="noopener noreferrer">Amazonで見る</a>
-        <a href="https://search.rakuten.co.jp/search/mall/無印+美白+美容液/" target="_blank" rel="noopener noreferrer">楽天で探す</a>
-        <a href="https://shopping.yahoo.co.jp/search?p=無印+美白+美容液" target="_blank" rel="noopener noreferrer">Yahooで探す</a>
+    <section id="under-3000" class="item-list">
+      <h2>はじめてでも安心、プチプラ美容液</h2>
+    
+      <div class="item-card">
+        <img src="/img/melano-cc.jpg" alt="メラノCC 薬用しみ集中対策美容液">
+        <h3>メラノCC 薬用しみ集中対策美容液</h3>
+        <p>1,000円台で買える王道プチプラ。ピンポイントに使える液状タイプで、毛穴やシミが気になり始めた方に。</p>
+        <div class="links">
+          <a href="#" target="_blank" rel="nofollow">Amazon</a>
+          <a href="#" target="_blank" rel="nofollow">楽天</a>
+          <a href="#" target="_blank" rel="nofollow">Yahoo</a>
+        </div>
       </div>
-    </div>
-
-    <!-- 商品② メラノCC -->
-    <h2>02｜メラノCC 薬用しみ集中対策美容液</h2>
-    <div class="product">
-      <img src="https://via.placeholder.com/600x400?text=メラノCC" alt="メラノCC">
-      <div class="product-title">ロート製薬 メラノCC 薬用しみ集中対策美容液</div>
-      <p class="product-reason">シミ対策の鉄板。口コミ人気も高く、ニキビ跡にも◎。</p>
-      <div class="product-price">¥1,180（税込）</div>
-      <div class="buy-links">
-        <a href="https://amzn.to/3GelQOe" target="_blank" rel="noopener noreferrer">Amazonで見る</a>
-        <a href="https://search.rakuten.co.jp/search/mall/メラノCC+薬用美容液/" target="_blank" rel="noopener noreferrer">楽天で探す</a>
-        <a href="https://shopping.yahoo.co.jp/search?p=メラノCC+薬用美容液" target="_blank" rel="noopener noreferrer">Yahooで探す</a>
+    
+      <div class="item-card">
+        <img src="/img/sana-nameraka.jpg" alt="なめらか本舗 薬用美白美容液">
+        <h3>なめらか本舗 薬用美白美容液</h3>
+        <p>豆乳イソフラボン配合で肌にやさしく、ビタミンC誘導体も入ったまろやかな1本。2,000円以下。</p>
+        <div class="links">
+          <a href="#" target="_blank" rel="nofollow">Amazon</a>
+          <a href="#" target="_blank" rel="nofollow">楽天</a>
+          <a href="#" target="_blank" rel="nofollow">Yahoo</a>
+        </div>
       </div>
-    </div>
-
-    <!-- 商品③ トラネホワイトニング -->
-    <h2>03｜トラネキサム酸配合 薬用美白美容液</h2>
-    <div class="product">
-      <img src="https://via.placeholder.com/600x400?text=トラネキサム酸" alt="トラネキサム酸美容液">
-      <div class="product-title">CONODO トラネホワイトニングセラム</div>
-      <p class="product-reason">美白成分×低刺激のいいとこ取り。敏感肌・乾燥肌さんに。</p>
-      <div class="product-price">¥2,480（税込）</div>
-      <div class="buy-links">
-        <a href="https://amzn.to/3Rt4Zti" target="_blank" rel="noopener noreferrer">Amazonで見る</a>
-        <a href="https://search.rakuten.co.jp/search/mall/トラネキサム酸+美白+CONODO/" target="_blank" rel="noopener noreferrer">楽天で探す</a>
-        <a href="https://shopping.yahoo.co.jp/search?p=CONODO+トラネホワイトニングセラム" target="_blank" rel="noopener noreferrer">Yahooで探す</a>
+    </section>
+    
+    <section id="midrange" class="item-list">
+      <h2>“わたしにちょうどいい”本命美容液</h2>
+    
+      <div class="item-card">
+        <img src="/img/hakumei.jpg" alt="HAKU メラノフォーカスEV">
+        <h3>HAKU メラノフォーカスEV</h3>
+        <p>資生堂の美白研究が詰まったロングセラー。透明感にこだわるならこれ一択。¥4,500前後。</p>
+        <div class="links">
+          <a href="#" target="_blank" rel="nofollow">Amazon</a>
+          <a href="#" target="_blank" rel="nofollow">楽天</a>
+          <a href="#" target="_blank" rel="nofollow">Yahoo</a>
+        </div>
       </div>
-    </div>
-
-    <!-- 商品④ オバジ -->
-    <h2>04｜オバジC25セラム ネオ</h2>
-    <div class="product">
-      <img src="https://via.placeholder.com/600x400?text=オバジC25" alt="オバジC25">
-      <div class="product-title">ロート製薬 オバジC25セラム ネオ</div>
-      <p class="product-reason">「とにかく効かせたい」派に。毛穴・シミに集中ケアしたい方に。</p>
-      <div class="product-price">¥8,800（税込）</div>
-      <div class="buy-links">
-        <a href="https://amzn.to/3RXWdDF" target="_blank" rel="noopener noreferrer">Amazonで見る</a>
-        <a href="https://search.rakuten.co.jp/search/mall/オバジC25セラム+ネオ/" target="_blank" rel="noopener noreferrer">楽天で探す</a>
-        <a href="https://shopping.yahoo.co.jp/search?p=オバジC25セラム+ネオ" target="_blank" rel="noopener noreferrer">Yahooで探す</a>
+    
+      <div class="item-card">
+        <img src="/img/quality-1st.jpg" alt="クオリティファースト ダーマレーザーVC100">
+        <h3>クオリティファースト ダーマレーザーVC100</h3>
+        <p>ドラッグストアでも人気の1本。高濃度VCと使い心地のバランスが優秀で、初心者〜中級者にぴったり。</p>
+        <div class="links">
+          <a href="#" target="_blank" rel="nofollow">Amazon</a>
+          <a href="#" target="_blank" rel="nofollow">楽天</a>
+          <a href="#" target="_blank" rel="nofollow">Yahoo</a>
+        </div>
       </div>
-    </div>
-
-    <!-- 商品⑤ フラコラ -->
-    <h2>05｜フラコラ ビタミンC原液</h2>
-    <div class="product">
-      <img src="https://via.placeholder.com/600x400?text=フラコラVC" alt="フラコラVC">
-      <div class="product-title">フラコラ 高浸透型ビタミンC原液</div>
-      <p class="product-reason">とろみ少なめ・肌にスッと入る感触。ベタつきが苦手な人に◎。</p>
-      <div class="product-price">¥3,980（税込）</div>
-      <div class="buy-links">
-        <a href="https://amzn.to/4cH08hT" target="_blank" rel="noopener noreferrer">Amazonで見る</a>
-        <a href="https://search.rakuten.co.jp/search/mall/フラコラ+ビタミンC原液/" target="_blank" rel="noopener noreferrer">楽天で探す</a>
-        <a href="https://shopping.yahoo.co.jp/search?p=フラコラ+ビタミンC原液" target="_blank" rel="noopener noreferrer">Yahooで探す</a>
+    </section>
+    
+    <section id="highend" class="item-list">
+      <h2>本気のケアを求めるあなたに</h2>
+    
+      <div class="item-card">
+        <img src="/img/dr-ci-labo.jpg" alt="ドクターシーラボ VC100エッセンスローションEX">
+        <h3>ドクターシーラボ VC100エッセンスローションEX</h3>
+        <p>高浸透ビタミンC＋ナイアシンアミドで毛穴・くすみにトータルアプローチ。¥7,000前後の実力派。</p>
+        <div class="links">
+          <a href="#" target="_blank" rel="nofollow">Amazon</a>
+          <a href="#" target="_blank" rel="nofollow">楽天</a>
+          <a href="#" target="_blank" rel="nofollow">Yahoo</a>
+        </div>
       </div>
-    </div>
-
-    <div class="section">
-      <strong>迷ったら</strong><br>
-      「まず1本使ってみたい」ならメラノCC、「敏感肌でも安心感が欲しい」なら無印良品をおすすめします。
-    </div>
+    
+      <div class="item-card">
+        <img src="/img/obagi-c25.jpg" alt="オバジC25セラム ネオ">
+        <h3>オバジC25セラム ネオ</h3>
+        <p>シリーズ最高濃度のビタミンCを配合し、しみ・たるみに集中アプローチ。¥8,000前後の本格ケア派に。</p>
+        <div class="links">
+          <a href="#" target="_blank" rel="nofollow">Amazon</a>
+          <a href="#" target="_blank" rel="nofollow">楽天</a>
+          <a href="#" target="_blank" rel="nofollow">Yahoo</a>
+        </div>
+      </div>
+    </section>
 
   </main>
   <footer>
-    &copy; 2025 Sellemy. All rights reserved.
+    <p>&copy; 2025 Sellemy. All rights reserved.</p>
   </footer>
 </body>
 </html>
