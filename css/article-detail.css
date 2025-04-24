@@ -59,7 +59,8 @@
 .item-card img {
   width: 100%;
   height: auto;
-  border-radius: 4px;
+  max-height: 280px; /* 任意の高さ制限 */
+  object-fit: contain;
   margin-bottom: 0.8rem;
 }
 
@@ -105,3 +106,4 @@
   height: auto;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+
