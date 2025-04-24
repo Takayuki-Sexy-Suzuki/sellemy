@@ -25,15 +25,13 @@
 }
 
 .item-list {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
   margin-bottom: 3rem;
 }
 
 .item-card {
-  flex: 1 1 calc(50% - 2rem);
-  box-sizing: border-box;
   background: #fff;
   border: 1px solid #eee;
   border-radius: 8px;
@@ -81,7 +79,7 @@
 }
 
 @media screen and (max-width: 768px) {
-  .item-card {
-    flex: 1 1 100%;
+  .item-list {
+    grid-template-columns: 1fr;
   }
 }
