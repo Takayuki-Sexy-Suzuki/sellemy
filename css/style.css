@@ -125,3 +125,13 @@ footer {
   color: #333;
   font-weight: 600;
 }
+
+.article-detail h2 {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #7a554f; /* ブランド感ある落ち着いた茶系 */
+  border-left: 4px solid #e9dcd9; /* アクセント帯 */
+  padding-left: 0.8rem;
+  margin: 2.5rem 0 1rem;
+  line-height: 1.4;
+}
