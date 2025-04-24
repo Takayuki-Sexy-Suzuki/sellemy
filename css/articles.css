@@ -1,0 +1,50 @@
+/* articles.html 専用CSS */
+
+main {
+  padding: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.intro {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 2.5rem;
+}
+
+.article-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.article-card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 1.2rem;
+  text-decoration: none;
+  color: #333;
+  transition: box-shadow 0.2s ease;
+  display: block;
+}
+
+.article-card:hover {
+  box-shadow: 0 0 8px rgba(0,0,0,0.08);
+}
+
+.article-card h2 {
+  font-size: 1.1rem;
+  margin-top: 0;
+}
+
+.article-card p {
+  color: #666;
+  font-size: 0.9rem;
+  margin: 0.5rem 0 0;
+}
