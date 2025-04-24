@@ -106,4 +106,6 @@ footer {
   color: #E7C8BF;
   font-weight: 400;
   line-height: 1;
+  position: relative;
+  top: 2px; /* 下に2px移動 */
 }
