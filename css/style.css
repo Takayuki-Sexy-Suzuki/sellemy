@@ -83,11 +83,21 @@ footer {
   margin-top: 4rem;
 }
 
-.brand-tagline {
-  text-align: center;
-  font-size: 0.85rem;
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem 2rem;
+}
+
+.brand .logo {
+  height: 40px;
+  width: auto;
+}
+
+.brand .tagline {
+  font-size: 0.9rem;
   color: #b2948d;
-  margin-top: 0.4rem;
-  margin-bottom: 0.6rem;
-  letter-spacing: 0.03em;
+  font-weight: 400;
+  line-height: 1.4;
 }
