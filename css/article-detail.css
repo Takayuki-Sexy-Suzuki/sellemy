@@ -24,6 +24,12 @@
   text-decoration: underline;
 }
 
+.article-detail main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
 .item-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
