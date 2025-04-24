@@ -28,7 +28,7 @@
 <body>
 
     <header>
-    <img src="img/sellemy-logo.png" alt="Sellemy logo" class="logo" />
+    <div id="brand-header"></div>
     <nav>
       <a href="products.html">商品一覧</a>
       <a href="category-beauty.html">美容</a>
@@ -55,6 +55,14 @@
   <footer>
     &copy; 2025 Sellemy. All rights reserved.
   </footer>
-
+  
+<script>
+  fetch('/includes/brand.html')
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('brand-header').innerHTML = html;
+    });
+</script>
+  
 </body>
 </html>
