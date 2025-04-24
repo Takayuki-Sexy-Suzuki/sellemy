@@ -85,10 +85,9 @@ footer {
 
 .brand-tagline {
   text-align: center;
-  font-size: 0.9rem;
-  color: #b2948d; /* ブランドカラーに合わせる */
-  font-family: 'Helvetica Neue', sans-serif;
-  margin-top: -0.5rem;
-  margin-bottom: 2rem;
-  letter-spacing: 0.02em;
+  font-size: 0.85rem;
+  color: #b2948d;
+  margin-top: 0.4rem;
+  margin-bottom: 0.6rem;
+  letter-spacing: 0.03em;
 }
