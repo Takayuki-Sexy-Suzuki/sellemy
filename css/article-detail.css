@@ -35,6 +35,11 @@
   line-height: 1.8;
 }
 
+.article-detail p {
+  line-height: 1.9;         /* より読みやすいよう個別上書き */
+  margin-bottom: 1.4em;     /* 段落と段落の余白を調整 */
+}
+
 .item-list {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
