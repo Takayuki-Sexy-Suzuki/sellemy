@@ -107,7 +107,7 @@ footer {
   font-weight: 400;
   line-height: 1;
   position: relative;
-  top: 20px; /* 下に20px移動 */
+  top: 10px; /* 下に10px移動 */
 }
 
 .section-title {
