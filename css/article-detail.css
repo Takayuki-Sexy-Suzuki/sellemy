@@ -2,6 +2,10 @@
 
 .toc {
   margin: 2rem 0;
+  background: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 1rem;
+  border-radius: 8px;
 }
 
 .toc ul {
@@ -28,6 +32,7 @@
   max-width: 1000px;
   margin: 0 auto;
   padding: 2rem;
+  line-height: 1.8;
 }
 
 .item-list {
@@ -67,6 +72,7 @@
   color: #666;
   font-size: 0.9rem;
   margin: 0.5rem 0 0;
+  line-height: 1.6;
 }
 
 .links a {
