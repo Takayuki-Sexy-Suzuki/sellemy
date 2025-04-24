@@ -81,21 +81,6 @@
   line-height: 1.6;
 }
 
-.links a {
-  display: inline-block;
-  margin: 0.3rem 0.5rem 0 0;
-  background: #f5f5f5;
-  padding: 0.4rem 0.8rem;
-  border-radius: 6px;
-  text-decoration: none;
-  color: #555;
-  font-size: 0.85rem;
-}
-
-.links a:hover {
-  background: #e0e0e0;
-}
-
 @media screen and (max-width: 768px) {
   .item-list {
     grid-template-columns: 1fr;
@@ -133,7 +118,7 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
 }
 
-nav a {
+.article-detail nav a {
   display: inline-block;
   padding: 0.6rem 1rem;
   font-size: 1rem;
@@ -143,7 +128,7 @@ nav a {
   transition: background 0.2s ease;
 }
 
-nav a:hover {
+.article-detail nav a:hover {
   background: #f5f5f5;
 }
 
