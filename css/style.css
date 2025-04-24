@@ -130,7 +130,8 @@ footer {
   font-size: 1.3rem;
   font-weight: 600;
   color: #7a554f;
-  padding: 0.6rem 1rem;
+  padding: 0.4rem 1rem;
+  justify-content: flex-start;
   background-color: #fef7f5;
   border-left: 4px solid #e9dcd9;
   border-radius: 0 6px 6px 0;
