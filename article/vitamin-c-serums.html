@@ -16,10 +16,7 @@
 <body class="article-detail">
   
   <header>
-    <div class="brand">
-      <img src="/sellemy-logo.png" alt="Sellemyロゴ" class="logo" />
-      <span class="tagline">選びやすくて、わたしにちょうどいい情報ガイド</span>
-    </div>
+    <div id="brand-header"></div>
     <nav>
       <a href="/index.html">トップ</a>
       <a href="/products.html">商品一覧</a>
@@ -50,7 +47,7 @@
     </p>
 
 
-<nav class="toc">
+    <nav class="toc">
       <strong>気になる価格帯から選ぶ</strong>
       <ul>
         <li><a href="#under-3000">はじめてでも安心、プチプラ美容液（1,000〜3,000円前後）</a></li>
@@ -166,5 +163,14 @@
   <footer>
     <p>&copy; 2025 Sellemy. All rights reserved.</p>
   </footer>
+  
+<script>
+  fetch('/includes/brand.html')
+    .then(res => res.text())
+    .then(html => {
+      document.getElementById('brand-header').innerHTML = html;
+    });
+</script>
+  
 </body>
 </html>
