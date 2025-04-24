@@ -16,6 +16,8 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  letter-spacing: 0.03em;
+  font-family: 'Helvetica Neue', 'Noto Sans JP', sans-serif;
   padding: 0.7rem 2.5rem;
   background-color: #ffffff;
   border-bottom: 1px solid #eee;
