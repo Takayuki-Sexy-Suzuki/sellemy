@@ -107,5 +107,5 @@ footer {
   font-weight: 400;
   line-height: 1;
   position: relative;
-  top: 2px; /* 下に2px移動 */
+  top: 20px; /* 下に20px移動 */
 }
