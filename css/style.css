@@ -7,7 +7,6 @@ body {
   line-height: 1.75;
   letter-spacing: 0.03em;
   font-family: 'Helvetica Neue', 'Noto Sans JP', sans-serif;
-  max-width: 680px;
   margin: 0 auto;
   padding: 1.5rem;
 }
