@@ -109,3 +109,19 @@ footer {
   position: relative;
   top: 20px; /* 下に20px移動 */
 }
+
+.section-title {
+  background-color: #fff8f6; /* ごく淡いピンクベージュ系 */
+  padding: 1.2rem 1.6rem;
+  border-radius: 12px;
+  margin: 2rem 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+  text-align: center;
+}
+
+.section-title h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  color: #333;
+  font-weight: 600;
+}
