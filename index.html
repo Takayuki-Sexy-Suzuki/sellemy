@@ -6,14 +6,14 @@
   <title>Sellemy – わたしに、ちょうどいい。</title>
 
   <!-- Favicon -->
-  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
 
   <!-- SEO / OGP -->
   <meta name="description" content="Sellemy（セレミー）は、美容・家電・日用品などをやさしくセレクト。選び疲れをなくす、わたしに寄り添う情報ガイドです。" />
   <meta name="keywords" content="Sellemy,セレミー,美容,家電,日用品,選び方,セレクト,比較" />
   <meta property="og:title" content="Sellemy – わたしに、ちょうどいい。" />
   <meta property="og:description" content="選び疲れをなくす、わたしに寄り添うガイド。" />
-  <meta property="og:image" content="ogp-image.jpg" />
+  <meta property="og:image" content="/ogp-image.jpg" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://takayuki-sexy-suzuki.github.io/sellemy/" />
 
@@ -23,19 +23,12 @@
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-SZ5RQR5H7L"></script>
   <script src="/js/ga4.js"></script>
-
 </head>
+
 <body>
 
-    <header>
-    <div id="brand-header"></div>
-    <nav>
-      <a href="products.html">商品一覧</a>
-      <a href="category-beauty.html">美容</a>
-      <a href="category-home.html">家電</a>
-      <a href="category-daily.html">日用品</a>
-    </nav>
-  </header>
+  <!-- 新共通ヘッダー読み込み -->
+  <!--#include virtual="/includes/header.html" -->
 
   <section class="hero">
     <h1>わたしに、ちょうどいい。</h1>
@@ -47,22 +40,14 @@
 
   <section class="links">
     <a href="products.html">商品一覧ページへ</a>
-    <a href="category-beauty.html">美容カテゴリ</a>
-    <a href="category-home.html">家電カテゴリ</a>
-    <a href="category-daily.html">日用品カテゴリ</a>
+    <a href="/article/beauty/index.html">美容カテゴリ</a>
+    <a href="/article/home-appliances/index.html">家電カテゴリ</a>
+    <a href="/article/supplements/index.html">日用品カテゴリ</a>
   </section>
 
   <footer>
     &copy; 2025 Sellemy. All rights reserved.
   </footer>
-  
-<script>
-  fetch('/includes/brand.html')
-    .then(res => res.text())
-    .then(html => {
-      document.getElementById('brand-header').innerHTML = html;
-    });
-</script>
-  
+
 </body>
 </html>
