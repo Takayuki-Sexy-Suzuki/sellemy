@@ -243,3 +243,51 @@ footer {
 .breadcrumb a:hover {
   text-decoration: underline;
 }
+
+/* ========= 記事詳細レイアウト補強 ========= */
+
+.article-detail main {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 2rem;
+  line-height: 1.8;
+}
+
+.article-detail p {
+  line-height: 1.9;
+  margin-bottom: 1.4em;
+}
+
+.eyecatch {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.eyecatch img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.article-detail .links a {
+  display: inline-block;
+  background-color: #f8f3f2;
+  border: 1px solid #e0d6d2;
+  border-radius: 6px;
+  padding: 0.4rem 0.8rem;
+  margin: 0.2rem 0.3rem 0 0;
+  font-size: 0.85rem;
+  color: #7a554f;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.article-detail .links a:hover {
+  background-color: #ede5e2;
+  color: #333;
+  border-color: #d4c1bb;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
