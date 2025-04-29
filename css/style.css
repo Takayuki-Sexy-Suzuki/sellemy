@@ -407,3 +407,40 @@ footer {
   text-align: center;
   color: #555;
 }
+
+.toc {
+  background-color: #fff8f6;
+  padding: 1.2rem 1.6rem;
+  border-radius: 12px;
+  margin: 2rem 0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.toc strong {
+  display: block;
+  font-size: 1.1rem;
+  color: #7a554f;
+  margin-bottom: 0.8rem;
+}
+
+.toc ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.toc li a {
+  color: #4a4a4a;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+
+.toc li a:hover {
+  text-decoration: underline;
+}
