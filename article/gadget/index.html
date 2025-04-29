@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>わたしにちょうどいい、家電のヒント - Sellemy</title>
+  <meta name="description" content="家電に関する記事一覧。暮らしを便利にするスマートな家電選びをやさしくガイドします。">
+  <meta property="og:title" content="わたしにちょうどいい、家電のヒント - Sellemy" />
+  <meta property="og:description" content="暮らしを便利にするスマートな家電選びをやさしくガイドします。">
+  <meta property="og:image" content="/img/gadget-category-eyecatch.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.sellemy.jp/article/gadget/" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SZ5RQR5H7L"></script>
+  <script src="/js/ga4.js"></script>
+</head>
+<body data-category="gadget">
+  <header class="site-header">
+    <div class="brand">
+      <a href="/index.html">
+        <img src="/img/sellemy-logo.png" alt="Sellemyロゴ" class="logo" />
+      </a>
+      <span class="tagline">選びやすくて、わたしにちょうどいい情報ガイド</span>
+    </div>
+    <nav class="site-nav">
+      <ul class="nav-links">
+        <li><a href="/article/beauty/" class="nav-link">美容</a></li>
+        <li><a href="/article/dailygoods/" class="nav-link">日用品</a></li>
+        <li><span class="nav-link active">家電</span></li>
+        <li><a href="/articles.html" class="nav-link">記事一覧</a></li>
+        <li><a href="/products.html" class="nav-link">商品一覧</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="section-title"><h1>わたしにちょうどいい、家電のヒント</h1></div>
+    <div class="category-eyecatch">
+      <img src="/img/gadget-category-eyecatch.png" alt="家電カテゴリトップ画像" />
+    </div>
+
+    <section class="category-intro">
+      <p>
+        家事の効率化や快適な暮らしの実現に欠かせないのが、毎日を支える生活家電やスマート家電。<br>
+        でも「種類が多くて選びきれない」「どの機能が自分に必要か分からない」という声も少なくありません。<br>
+        Sellemyでは、日々の生活をちょっとラクに、ちょっと豊かにしてくれる“ちょうどいい”家電を、目的別・機能別にやさしくご紹介しています。
+      </p>
+      <p>
+        このページでは、調理家電・掃除家電・空調やスマートガジェットなど、暮らしを快適にしてくれる家電製品を中心に、編集部おすすめの記事を掲載しています。<br>
+        「初めて導入する方」「買い替えを検討している方」など、それぞれの生活スタイルやライフステージに合った家電選びの参考になるはずです。
+      </p>
+      <p>
+        たとえば「料理の手間を減らしたい」「掃除をもっと効率化したい」「音声操作やスマート連携を取り入れたい」などのニーズに応じて、<br>
+        自分にぴったりの家電を選ぶコツや製品の特徴、活用アイデアなどをわかりやすくご紹介します。<br>
+        情報に疲れず、納得して選べるように、Sellemyがやさしくナビゲートしていきます。
+      </p>
+    </section>
+
+    <div class="section-title"><h2>家電に関する記事一覧</h2></div>
+    <div class="article-list" id="articleList"></div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Sellemy. All rights reserved.</p>
+  </footer>
+
+  <script>
+    fetch('/json/articles.json')
+      .then(res => res.json())
+      .then(articles => {
+        const container = document.getElementById('articleList');
+        articles
+          .filter(article => article.category === 'gadget')
+          .forEach(article => {
+            const card = document.createElement('a');
+            card.href = `/article/${article.category}/${article.slug}.html`;
+            card.className = 'article-card';
+            card.innerHTML = `
+              <img src="/img/${article.slug}/${article.slug}.png" alt="${article.title}" />
+              <div class="article-text">
+                <span class="article-category">家電</span>
+                <h2>${article.title}</h2>
+                <p class="summary">${article.summary}</p>
+              </div>
+            `;
+            container.appendChild(card);
+          });
+      });
+  </script>
+</body>
+</html>
