@@ -27,6 +27,7 @@
 
 <body data-category="top">
 
+  <!-- ヘッダー -->
   <header class="site-header">
     <div class="brand">
       <a href="/index.html">
@@ -42,14 +43,15 @@
       </ul>
     </nav>
   </header>
-  <script>
-    const category = document.body.dataset.category;
-    if (category) {
-      const link = document.querySelector('.nav-link[data-name="' + category + '"]');
-      if (link) link.classList.add('active');
-    }
-  </script>
 
+  <!-- パンくず -->
+  <nav class="breadcrumb">
+    <ul>
+      <li>トップ</li>
+    </ul>
+  </nav>
+
+  <!-- カテゴリーハイライト -->
   <section class="hero">
     <h1>わたしに、ちょうどいい。</h1>
     <p>
@@ -58,6 +60,7 @@
     </p>
   </section>
 
+  <!-- CTAリンク -->
   <section class="links">
     <a href="products.html">商品一覧ページへ</a>
     <a href="/article/beauty/index.html">美容カテゴリ</a>
@@ -65,9 +68,18 @@
     <a href="/article/supplements/index.html">日用品カテゴリ</a>
   </section>
 
+  <!-- フッター -->
   <footer>
     &copy; 2025 Sellemy. All rights reserved.
   </footer>
 
+  <!-- カレントメニュー自動ハイライト -->
+  <script>
+    const category = document.body.dataset.category;
+    if (category) {
+      const link = document.querySelector('.nav-link[data-name="' + category + '"]');
+      if (link) link.classList.add('active');
+    }
+  </script>
 </body>
 </html>
