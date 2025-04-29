@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>わたしにちょうどいい、日用品のヒント - Sellemy</title>
+  <meta name="description" content="日用品に関する記事一覧。暮らしに役立つアイテム選びのヒントをやさしくガイドします。">
+  <meta property="og:title" content="わたしにちょうどいい、日用品のヒント - Sellemy" />
+  <meta property="og:description" content="暮らしに役立つアイテム選びのヒントをやさしくガイドします。">
+  <meta property="og:image" content="/img/dailygoods-category-eyecatch.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.sellemy.jp/article/dailygoods/" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SZ5RQR5H7L"></script>
+  <script src="/js/ga4.js"></script>
+</head>
+<body data-category="dailygoods">
+  <header class="site-header">
+    <div class="brand">
+      <a href="/index.html">
+        <img src="/img/sellemy-logo.png" alt="Sellemyロゴ" class="logo" />
+      </a>
+      <span class="tagline">選びやすくて、わたしにちょうどいい情報ガイド</span>
+    </div>
+    <nav class="site-nav">
+      <ul class="nav-links">
+        <li><a href="/article/beauty/" class="nav-link">美容</a></li>
+        <li><span class="nav-link active">日用品</span></li>
+        <li><a href="/article/gadget/" class="nav-link">家電</a></li>
+        <li><a href="/articles.html" class="nav-link">記事一覧</a></li>
+        <li><a href="/products.html" class="nav-link">商品一覧</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="section-title"><h1>わたしにちょうどいい、日用品のヒント</h1></div>
+    <div class="category-eyecatch">
+      <img src="/img/dailygoods-category-eyecatch.png" alt="日用品カテゴリトップ画像" />
+    </div>
+
+    <section class="category-intro">
+      <p>
+        キッチンや掃除、洗濯、収納、衛生管理など、日々の暮らしを支える日用品は多岐にわたります。<br>
+        でも「どれが使いやすいのか」「自分の生活に合っているのか」を判断するのは意外と難しいもの。<br>
+        Sellemyでは、そうした迷いや選び疲れを減らすために、目的別・使用シーン別に“ちょうどいい”日用品をやさしく紹介しています。
+      </p>
+      <p>
+        このページでは、洗剤や掃除グッズ、収納用品、キッチンツールなど、日々の暮らしをより快適にするための情報をお届けします。<br>
+        効率やコスパだけでなく、見た目の美しさや使い心地にも注目しながら、選びやすい形でまとめています。<br>
+        何気ない毎日を心地よく整えるためのヒントを、Sellemyが丁寧にナビゲートしていきます。
+      </p>
+      <p>
+        たとえば「部屋をすっきりさせたい」「時短で掃除したい」「家族みんなが使いやすいものを選びたい」など、暮らしの課題は人それぞれ。<br>
+        この記事一覧から、あなたの生活にぴったりなアイテムや選び方がきっと見つかります。
+      </p>
+    </section>
+
+    <div class="section-title"><h2>日用品に関する記事一覧</h2></div>
+    <div class="article-list" id="articleList"></div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Sellemy. All rights reserved.</p>
+  </footer>
+
+  <script>
+    fetch('/json/articles.json')
+      .then(res => res.json())
+      .then(articles => {
+        const container = document.getElementById('articleList');
+        articles
+          .filter(article => article.category === 'dailygoods')
+          .forEach(article => {
+            const card = document.createElement('a');
+            card.href = `/article/${article.category}/${article.slug}.html`;
+            card.className = 'article-card';
+            card.innerHTML = `
+              <img src="/img/${article.slug}/${article.slug}.png" alt="${article.title}" />
+              <div class="article-text">
+                <span class="article-category">日用品</span>
+                <h2>${article.title}</h2>
+                <p class="summary">${article.summary}</p>
+              </div>
+            `;
+            container.appendChild(card);
+          });
+      });
+  </script>
+</body>
+</html>
