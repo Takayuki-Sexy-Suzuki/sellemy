@@ -1,82 +1,82 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>わたしにちょうどいい、美容のヒント - Sellemy</title>
-
-  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
-
-  <meta name="description" content="迷わず、やさしく選べる美容アイテムを。Sellemyが届ける“わたしにちょうどいい”美容のヒント。" />
+  <meta name="description" content="美容に関する記事一覧。肌悩みやメイク、スキンケアの選び方をやさしくガイドします。">
   <meta property="og:title" content="わたしにちょうどいい、美容のヒント - Sellemy" />
-  <meta property="og:image" content="/ogp-image.jpg" />
+  <meta property="og:description" content="肌悩みやメイク、スキンケアの選び方をやさしくガイドします。">
+  <meta property="og:image" content="/img/beauty/beauty-category-eyecatch.png" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.sellemy.jp/category/beauty/" />
-
+  <meta property="og:url" content="https://www.sellemy.jp/article/beauty/" />
   <link rel="stylesheet" href="/css/style.css" />
-
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Helvetica Neue', sans-serif;
-      background: #fefdfc;
-      color: #333;
-    }
-    main {
-      padding: 2rem;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-    h1 {
-      font-size: 1.6rem;
-      margin-bottom: 1rem;
-    }
-    .intro {
-      font-size: 0.95rem;
-      color: #666;
-      margin-bottom: 2.5rem;
-    }
-    .item-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-      gap: 2rem;
-    }
-    .item-card {
-      background: #fff;
-      border: 1px solid #eee;
-      border-radius: 8px;
-      padding: 1.2rem;
-      text-decoration: none;
-      color: #333;
-      transition: box-shadow 0.2s ease;
-    }
-    .item-card:hover {
-      box-shadow: 0 0 8px rgba(0,0,0,0.08);
-    }
-    .item-card h2 {
-      font-size: 1.1rem;
-      margin-top: 0;
-    }
-    .item-card p {
-      color: #666;
-      font-size: 0.9rem;
-      margin: 0.5rem 0 0;
-    }
-    footer {
-      text-align: center;
-      font-size: 0.8rem;
-      color: #aaa;
-      padding: 3rem 0 1rem;
-      border-top: 1px solid #eee;
-      margin-top: 4rem;
-    }
-  </style>
-
-  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-SZ5RQR5H7L"></script>
   <script src="/js/ga4.js"></script>
 </head>
-
 <body data-category="beauty">
-  <!-- 共通ヘッダー読み込み -->
-  <!--#include
+  <header class="site-header">
+    <div class="brand">
+      <a href="/index.html">
+        <img src="/img/sellemy-logo.png" alt="Sellemyロゴ" class="logo" />
+      </a>
+      <span class="tagline">選びやすくて、わたしにちょうどいい情報ガイド</span>
+    </div>
+    <nav class="site-nav">
+      <ul class="nav-links">
+        <li><span class="nav-link active">わたしにちょうどいい、美容のヒント</span></li>
+        <li><a href="/article/dailygoods/" class="nav-link">日用品</a></li>
+        <li><a href="/article/gadget/" class="nav-link">家電</a></li>
+        <li><a href="/articles.html" class="nav-link">記事一覧</a></li>
+        <li><a href="/products.html" class="nav-link">商品一覧</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="section-title"><h1>美容カテゴリ</h1></div>
+    <div class="item-eyecatch">
+      <img src="/img/beauty/beauty-category-eyecatch.png" alt="美容カテゴリトップ画像" />
+    </div>
+
+    <section class="article-intro">
+      <p>
+        肌の悩みやエイジングケア、メイクの選び方など、美容に関する情報はあふれています。<br>
+        でも「何が自分に合っているのか」「どれを選べばいいのか」は迷いやすいもの。<br>
+        Sellemyでは、あなたにちょうどいい美容アイテムやケア情報をわかりやすくガイドします。
+      </p>
+    </section>
+
+    <div class="section-title"><h2>美容に関する記事一覧</h2></div>
+    <div class="article-list" id="articleList"></div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Sellemy. All rights reserved.</p>
+  </footer>
+
+  <script>
+    fetch('/json/articles.json')
+      .then(res => res.json())
+      .then(articles => {
+        const container = document.getElementById('articleList');
+        articles
+          .filter(article => article.category === 'beauty')
+          .forEach(article => {
+            const card = document.createElement('a');
+            card.href = `/article/${article.category}/${article.slug}.html`;
+            card.className = 'article-card';
+            card.innerHTML = `
+              <img src="/img/${article.slug}/${article.slug}.png" alt="${article.title}" />
+              <div class="article-text">
+                <span class="article-category">美容</span>
+                <h2>${article.title}</h2>
+                <p class="summary">${article.summary}</p>
+              </div>
+            `;
+            container.appendChild(card);
+          });
+      });
+  </script>
+</body>
+</html>
