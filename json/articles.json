@@ -1,0 +1,24 @@
+articles.json
+[
+  {
+    "title": "家事効率アップ！スマート家電6選",
+    "slug": "smart-home-appliances-top-6",
+    "category": "gadget",
+    "img": "https://www.sellemy.jp/img/smart-home-appliances-top-6/smart-home-appliances-top-6.png",
+    "summary": "最新のスマート家電で、家事がもっと簡単に。おすすめの6製品をご紹介します。"
+  },
+  {
+    "title": "快適生活の新定番！エコ洗剤6選",
+    "slug": "eco-friendly-detergents-6picks",
+    "category": "dailygoods",
+    "img": "https://www.sellemy.jp/img/eco-friendly-detergents-6picks/eco-friendly-detergents-6picks.png",
+    "summary": "環境にも優しいエコ洗剤を厳選してご紹介。快適な生活をサポートします。"
+  },
+  {
+    "title": "わたしにちょうどいい、ビタミンC美容液6選 - Sellemy",
+    "slug": "vitamin-c-serums",
+    "category": "beauty",
+    "img": "https://www.sellemy.jp/img/vitamin-c-serums.png",
+    "summary": "肌に優しく、日常に取り入れやすいビタミンC美容液を厳選しました。あなたにぴったりの一本を見つけましょう。"
+  }
+]
