@@ -183,6 +183,10 @@ footer {
 
 .item-card img {
   width: 100%;
+  height: auto;
+  max-height: 280px; /* 推奨：必要に応じて調整 */
+  object-fit: contain; /* coverだと切れる可能性あり */
+  display: block;
   border-radius: 6px;
 }
 
