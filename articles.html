@@ -1,72 +1,79 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>読む - Sellemy</title>
-  <link rel="icon" href="favicon.ico" type="image/x-icon" />
-  <meta name="description" content="読むと、ちょっと選びやすくなる。Sellemyの特集・レビュー・読みものページ。" />
-  <meta property="og:title" content="読む - Sellemy" />
-  <meta property="og:image" content="ogp-image.jpg" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>記事一覧 - Sellemy</title>
+  <meta name="description" content="Sellemyがセレクトした美容・家電・日用品のおすすめ記事一覧。あなたにちょうどいい情報をカテゴリ別にお届けします。">
+  <meta property="og:title" content="記事一覧 - Sellemy" />
+  <meta property="og:description" content="Sellemyがセレクトした美容・家電・日用品のおすすめ記事一覧。">
+  <meta property="og:image" content="/ogp-image.jpg" />
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://takayuki-sexy-suzuki.github.io/sellemy/articles.html" />
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-XXXXXXX');
-  </script>
+  <meta property="og:url" content="https://www.sellemy.jp/articles.html" />
   <link rel="stylesheet" href="/css/style.css" />
-  <link rel="stylesheet" href="/css/articles.css" />
-  
-  <!-- Google tag (gtag.js) -->
+
+    <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-SZ5RQR5H7L"></script>
   <script src="/js/ga4.js"></script>
-    
 </head>
+<body data-category="articles">
 
-<body>
-    <header>
-    <div id="brand-header"></div>
-    <nav>
-      <a href="index.html">トップ</a>
-      <a href="products.html">探す</a>
-      <a href="category-beauty.html">美容</a>
-      <a href="category-home.html">家電</a>
-      <a href="category-daily.html">日用品</a>
+  <header class="site-header">
+    <div class="brand">
+      <a href="/index.html">
+        <img src="/img/sellemy-logo.png" alt="Sellemyロゴ" class="logo" />
+      </a>
+      <span class="tagline">選びやすくて、わたしにちょうどいい情報ガイド</span>
+    </div>
+    <nav class="site-nav">
+      <ul class="nav-links">
+        <li><a href="/article/beauty/" class="nav-link" data-name="beauty">美容</a></li>
+        <li><a href="/article/dailygoods/" class="nav-link" data-name="dailygoods">日用品</a></li>
+        <li><a href="/article/gadget/" class="nav-link" data-name="gadget">家電</a></li>
+        <li><span class="nav-link active">記事一覧</span></li>
+        <li><a href="/products.html" class="nav-link" data-name="products">商品一覧</a></li>
+      </ul>
     </nav>
   </header>
-  <main>
-    <h1>読むと、選びやすくなる。</h1>
-    <p class="intro">ちょっと迷った時の、ひと呼吸。Sellemyの特集や読みものを集めました。</p>
-    
-    <section class="article-list">
-      <a href="article/vitamin-c-serums.html" class="article-card">
-        <h2>2025年春、美容液の選び方とおすすめ5選</h2>
-        <p>乾燥・毛穴・シミ、それぞれの悩みに合った選び方を徹底解説。</p>
-      </a>
-      <a href="article/humidifier-comparison.html" class="article-card">
-        <h2>「加湿器迷子」を救う、やさしい比較記事</h2>
-        <p>超音波？スチーム？暮らし方に合った加湿器を紹介します。</p>
-      </a>
-      <a href="article/drinkable-skincare.html" class="article-card">
-        <h2>今すぐ始めたい、飲むスキンケア3選</h2>
-        <p>オメガ3やビタミンの“飲む美容法”をレビュー付きで紹介。</p>
-      </a>
-    </section>
 
+  <main>
+    <div class="section-title"><h1>記事一覧</h1></div>
+    <div class="article-list" id="articleList"></div>
   </main>
+
   <footer>
-    &copy; 2025 Sellemy. All rights reserved.
+    <p>&copy; 2025 Sellemy. All rights reserved.</p>
   </footer>
 
-<script>
-  fetch('/includes/brand.html')
-    .then(res => res.text())
-    .then(html => {
-      document.getElementById('brand-header').innerHTML = html;
-    });
-</script>
+  <script>
+    fetch('/json/articles.json')
+      .then(res => res.json())
+      .then(articles => {
+        const container = document.getElementById('articleList');
+        articles.forEach(article => {
+          const card = document.createElement('a');
+          card.href = `/article/${article.category}/${article.slug}.html`;
+          card.className = 'article-card';
+          card.innerHTML = `
+            <img src="${article.img}" alt="${article.title}" />
+            <span class="article-category">${mapCategory(article.category)}</span>
+            <h2>${article.title}</h2>
+            <p class="summary">${article.summary}</p>
+          `;
+          container.appendChild(card);
+        });
+      });
+
+    function mapCategory(slug) {
+      switch (slug) {
+        case 'beauty': return '美容';
+        case 'gadget': return '家電';
+        case 'dailygoods':
+        case 'daily': return '日用品';
+        default: return slug;
+      }
+    }
+  </script>
 
 </body>
 </html>
