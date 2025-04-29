@@ -258,12 +258,12 @@ footer {
   margin-bottom: 1.4em;
 }
 
-.eyecatch {
+.item-eyecatch {
   text-align: center;
   margin: 2rem 0;
 }
 
-.eyecatch img {
+.item-eyecatch img {
   max-width: 100%;
   height: auto;
   border-radius: 8px;
