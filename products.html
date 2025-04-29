@@ -4,36 +4,35 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>商品一覧 - Sellemy</title>
-  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+  <!-- SEO / OGP -->
   <meta name="description" content="Sellemyの商品一覧ページ。なんとなく気になる、そんな気分に寄り添ったやさしいセレクト。" />
   <meta property="og:title" content="商品一覧 - Sellemy" />
-  <meta property="og:image" content="ogp-image.jpg" />
+  <meta property="og:image" content="/ogp-image.jpg" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://takayuki-sexy-suzuki.github.io/sellemy/products.html" />
   
+  <!-- Stylesheets -->
   <link rel="stylesheet" href="/css/style.css" />
   <link rel="stylesheet" href="/css/products.css" />
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-SZ5RQR5H7L"></script>
-<script src="/js/ga4.js"></script>
-
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-SZ5RQR5H7L"></script>
+  <script src="/js/ga4.js"></script>
 </head>
+
 <body>
-    <header>
-    <div id="brand-header"></div>
-    <nav>
-      <a href="index.html">トップ</a>
-      <a href="articles.html">読む</a>
-      <a href="category-beauty.html">美容</a>
-      <a href="category-home.html">家電</a>
-      <a href="category-daily.html">日用品</a>
-    </nav>
-  </header>
-  
+
+  <!-- 新共通ヘッダー読み込み -->
+  <!--#include virtual="/includes/header.html" -->
+
   <main>
     <h1>今日、ちょっと気になるもの</h1>
     <p class="intro">選ぶ理由はまだなくても、なんとなく目にとめたくなる。そんな商品のセレクトです。</p>
+
     <div class="product-grid">
       <div class="product-card">
         <img src="https://via.placeholder.com/200x200?text=商品1" alt="商品1">
@@ -52,17 +51,10 @@
       </div>
     </div>
   </main>
+
   <footer>
     &copy; 2025 Sellemy. All rights reserved.
   </footer>
-
-<script>
-  fetch('/includes/brand.html')
-    .then(res => res.text())
-    .then(html => {
-      document.getElementById('brand-header').innerHTML = html;
-    });
-</script>
 
 </body>
 </html>
