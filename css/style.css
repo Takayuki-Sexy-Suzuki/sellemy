@@ -204,3 +204,40 @@ footer {
   color: #333;
   text-decoration: none;
 }
+
+/* パンくずリスト */
+.breadcrumb {
+  font-size: 0.85rem;
+  margin: 1rem 0 2rem;
+}
+
+.breadcrumb ul {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.breadcrumb li {
+  display: flex;
+  align-items: center;
+  color: #999;
+  font-weight: 400;
+}
+
+.breadcrumb li:not(:last-child)::after {
+  content: ">";
+  margin: 0 0.5rem;
+  color: #ccc;
+  font-size: 0.8rem;
+}
+
+.breadcrumb a {
+  color: #666;
+  text-decoration: none;
+}
+
+.breadcrumb a:hover {
+  text-decoration: underline;
+}
