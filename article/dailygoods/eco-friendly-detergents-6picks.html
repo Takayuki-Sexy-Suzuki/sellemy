@@ -4,27 +4,45 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>快適生活の新定番！エコ洗剤6選 - Sellemy</title>
-
-  <meta name="description" content="環境に優しく、毎日の洗濯をもっと快適にするエコ洗剤を厳選してご紹介します。自然由来の成分で肌にも優しく、洗浄力も抜群。お子様やペットのいるご家庭でも安心してお使いいただける商品ばかりです。この6つの洗剤で、地球にも家計にも優しい新しい洗濯スタイルを始めてみませんか？" />
+  <meta name="description" content="環境にも優しく、毎日の洗濯をもっと気持ちよく。この記事では、エコ洗剤の中から特におすすめの6つを厳選しました。植物由来の成分や低刺激設計で、肌にも地球にも優しい選択が可能に。快適な生活を送りながら、エコロジーな暮らしを始めてみませんか？初心者にもわかりやすく、選ぶ際のポイントもご紹介します。" />
   <meta property="og:title" content="快適生活の新定番！エコ洗剤6選 - Sellemy" />
-  <meta property="og:description" content="環境に優しく、毎日の洗濯をもっと快適にするエコ洗剤を厳選してご紹介します。" />
+  <meta property="og:description" content="環境にも優しく、毎日の洗濯をもっと気持ちよく。この記事では、エコ洗剤の中から特におすすめの6つを厳選しました。植物由来の成分や低刺激設計で、肌にも地球にも優しい選択が可能に。快適な生活を送りながら、エコロジーな暮らしを始めてみませんか？初心者にもわかりやすく、選ぶ際のポイントもご紹介します。" />
   <meta property="og:image" content="https://www.sellemy.jp/img/eco-friendly-detergents-6picks/eco-friendly-detergents-6picks.png" />
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://www.sellemy.jp/article/eco-friendly-detergents-6picks.html" />
+  <link rel="stylesheet" href="https://www.sellemy.jp/css/style.css" />
 
-  <link rel="stylesheet" href="/css/style.css" />
-  <link rel="stylesheet" href="/css/article-detail.css" />
-
-  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-SZ5RQR5H7L"></script>
   <script src="/js/ga4.js"></script>
 </head>
 
-<body class="article-detail" data-category="daily">
-  <!-- 共通ヘッダー読み込み -->
-  <!--#include virtual="/includes/header.html" -->
+<body class="article-detail" data-category="dailygoods">
+  
+<header class="site-header">
+  <div class="brand">
+    <a href="/">
+      <img src="/img/sellemy-logo.png" alt="Sellemyロゴ" class="logo" />
+    </a>
+    <span class="tagline">選びやすくて、わたしにちょうどいい情報ガイド</span>
+  </div>
+  <nav class="site-nav">
+    <ul class="nav-links">
+      <a href="/article/beauty/" class="nav-link" data-name="beauty">美容</a><span class="nav-link active">日用品</span><a href="/article/gadget/" class="nav-link" data-name="gadget">家電</a>
+    </ul>
+  </nav>
+</header>
 
-<main>
+
+  <main>
+  
+<nav class="breadcrumb">
+  <ul>
+    <li><a href="/">Top</a></li>
+    <li><a href="/article/dailygoods/">日用品</a></li>
+    <li><span>快適生活の新定番！エコ洗剤6選</span></li>
+  </ul>
+</nav>
+
   <div class="section-title"><h1>快適生活の新定番！エコ洗剤6選</h1></div>
   <div class="eyecatch"><img src="https://www.sellemy.jp/img/eco-friendly-detergents-6picks/eco-friendly-detergents-6picks.png" alt="アイキャッチ" /></div>
   <p>日常生活でよく使う洗剤ですが、環境に配慮したエコ洗剤の選び方についてご存じでしょうか？最近では、地球環境を守りつつ、安全性も高いエコ洗剤が数多く登場しています。本記事では、快適かつ環境に優しい生活を送るためのエコ洗剤6選を紹介します。日々の生活で使う洗剤だからこそ、安心して使えるものを選びたいですよね。ここでは、環境負荷が低いだけでなく、洗浄力や使い心地も優れた商品を厳選しました。</p>
@@ -112,11 +130,16 @@ saféは、肌に優しい成分を使用しているため、小さなお子様
 </main>
 <footer><p>&copy; 2025 Sellemy. All rights reserved.</p></footer>
 <script>
-  fetch('/includes/brand.html')
-    .then(res => res.text())
-    .then(html => {
-      document.getElementById('brand-header').innerHTML = html;
-    });
+document.addEventListener('DOMContentLoaded', () => {
+  const currentCategory = document.body.dataset.category;
+  if (currentCategory) {
+    const activeLink = document.querySelector('.nav-link[data-name="' + currentCategory + '"]');
+    if (activeLink) {
+      activeLink.classList.add('active');
+    }
+  }
+});
 </script>
+
 </body>
 </html>
