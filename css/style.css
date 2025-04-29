@@ -1,45 +1,77 @@
-/* 共通スタイル（style.css として保存） */
+/* ============================================================
+   Sellemy 統合スタイルシート - style.css（2025統一版）
+   ============================================================ */
 
+/* ========= 基本設定 ========= */
 body {
   background: #fefdfc;
   color: #4a4a4a;
-  font-size: 1rem; /* ≒16px */
+  font-size: 1rem;
   line-height: 1.75;
   letter-spacing: 0.04em;
   font-family: 'Helvetica Neue', 'Noto Sans JP', sans-serif;
-  margin: 0 auto;
+  margin: 0;
   padding: 1.5rem;
 }
 
-header {
+/* ========= ヘッダー全体 ========= */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px 32px;
+  background: #ffffff;
+  border-bottom: 1px solid #eee;
+  letter-spacing: 0.03em;
+}
+
+.brand {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  letter-spacing: 0.03em;
-  font-family: 'Helvetica Neue', 'Noto Sans JP', sans-serif;
-  padding: 0.7rem 2.5rem;
-  background-color: #ffffff;
-  border-bottom: 1px solid #eee;
+  gap: 1rem;
 }
 
 .logo {
-  height: 48px;         /* ✅ 高さを固定 */
-  width: auto;          /* ✅ 横幅は自動で調整 */
-  max-height: 80px;
+  height: 48px;
+  width: auto;
   object-fit: contain;
 }
 
-nav a {
-  margin-left: 1.5rem;
+.tagline {
+  font-size: 0.85rem;
+  color: #E7C8BF;
+  font-weight: 400;
+  line-height: 1.2;
+  position: relative;
+  top: 6px;
+}
+
+.site-nav .nav-links {
+  display: flex;
+  gap: 24px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site-nav .nav-link {
   text-decoration: none;
   color: #888;
   font-size: 0.95rem;
+  transition: color 0.2s ease;
 }
 
-nav a:hover {
+.site-nav .nav-link:hover {
   color: #333;
 }
 
+.site-nav .nav-link.active {
+  color: #000;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/* ========= Heroセクション（トップページ） ========= */
 .hero {
   text-align: center;
   padding: 4rem 2rem 2rem;
@@ -59,6 +91,7 @@ nav a:hover {
   line-height: 1.8;
 }
 
+/* ========= リンクボタン ========= */
 .links {
   text-align: center;
   margin-top: 3rem;
@@ -80,6 +113,7 @@ nav a:hover {
   background: #eaeaea;
 }
 
+/* ========= フッター ========= */
 footer {
   text-align: center;
   font-size: 0.8rem;
@@ -89,29 +123,9 @@ footer {
   margin-top: 4rem;
 }
 
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  padding: 0rem 0rem;
-}
-
-.brand .logo {
-  height: 120px;
-  width: auto;
-}
-
-.brand .tagline {
-  font-size: 0.7rem;
-  color: #E7C8BF;
-  font-weight: 400;
-  line-height: 1;
-  position: relative;
-  top: 10px; /* 下に10px移動 */
-}
-
+/* ========= セクションタイトル ========= */
 .section-title {
-  background-color: #fff8f6; /* ごく淡いピンクベージュ系 */
+  background-color: #fff8f6;
   padding: 1.2rem 1.6rem;
   border-radius: 12px;
   margin: 2rem 0;
@@ -126,17 +140,70 @@ footer {
   font-weight: 600;
 }
 
+/* ========= 記事詳細：見出しなど ========= */
 .article-detail h2 {
   font-size: 1.3rem;
   font-weight: 600;
   color: #7a554f;
   padding: 0.2rem 1rem;
-  justify-content: flex-start;
   background-color: #fef7f5;
   border-left: 4px solid #e9dcd9;
   border-radius: 0 6px 6px 0;
   margin: 2.5rem 0 1.5rem;
   text-align: left;
-  display: block;                /* ✅ 横幅いっぱいにする */            /* ✅ 左寄せ */
-  max-width: 90%; 
+  display: block;
+  max-width: 90%;
 }
+
+/* ========= 製品一覧グリッド ========= */
+.product-grid,
+.item-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+
+.product-card,
+.item-card {
+  background: #fff;
+  border: 1px solid #eee;
+  border-radius: 8px;
+  padding: 1.2rem;
+  text-decoration: none;
+  color: #333;
+  transition: box-shadow 0.2s ease;
+}
+
+.product-card:hover,
+.item-card:hover {
+  box-shadow: 0 0 8px rgba(0,0,0,0.08);
+}
+
+.product-card h2,
+.item-card h3 {
+  font-size: 1.1rem;
+  margin: 0.5rem 0 0.3rem;
+}
+
+.product-card p,
+.item-card p {
+  color: #666;
+  font-size: 0.9rem;
+  margin: 0.5rem 0 0;
+}
+
+/* ========= テーブル・一覧・TOCなど共通 ========= */
+.toc ul {
+  padding-left: 1.2rem;
+}
+
+.toc ul li {
+  margin: 0.2rem 0;
+}
+
+.summary {
+  font-size: 0.95rem;
+  color: #555;
+  margin: 1rem 0 2rem;
+  line-height: 1.7;
+  max-width:
