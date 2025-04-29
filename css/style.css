@@ -377,3 +377,26 @@ footer {
   line-height: 1.6;
   margin-top: auto; /* 下に寄せる */
 }
+
+/* ========= カテゴリトップ用スタイル ========= */
+.category-eyecatch {
+  margin: 3rem 0;
+  text-align: center;
+}
+
+.category-eyecatch img {
+  width: 100%;
+  max-width: 1200px;
+  height: auto;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.category-intro {
+  max-width: 800px;
+  margin: 2rem auto;
+  font-size: 1rem;
+  line-height: 1.8;
+  text-align: center;
+  color: #555;
+}
