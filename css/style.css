@@ -300,7 +300,8 @@ footer {
 }
 
 .article-card {
-  display: block;
+  display: flex;
+  flex-direction: column;
   background: #fff;
   border: 1px solid #eee;
   border-radius: 8px;
@@ -309,6 +310,7 @@ footer {
   color: inherit;
   box-shadow: 0 2px 4px rgba(0,0,0,0.05);
   transition: box-shadow 0.2s ease;
+  height: 100%;
 }
 
 .article-card:hover {
@@ -317,7 +319,8 @@ footer {
 
 .article-card img {
   width: 100%;
-  height: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
   display: block;
 }
 
