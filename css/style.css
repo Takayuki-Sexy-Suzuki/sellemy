@@ -1,8 +1,6 @@
-/* ============================================================
-   Sellemy 統合スタイルシート - style.css（2025統一版）
-   ============================================================ */
+/* Sellemy 共通スタイル - 統合CSSファイル */
 
-/* ========= 基本設定 ========= */
+/* ========= ベーススタイル ========= */
 body {
   background: #fefdfc;
   color: #4a4a4a;
@@ -14,7 +12,12 @@ body {
   padding: 1.5rem;
 }
 
-/* ========= ヘッダー全体 ========= */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Helvetica Neue', 'Noto Sans JP', sans-serif;
+  margin: 0;
+}
+
+/* ========= ヘッダー ========= */
 .site-header {
   display: flex;
   justify-content: space-between;
@@ -71,7 +74,7 @@ body {
   text-decoration: underline;
 }
 
-/* ========= Heroセクション（トップページ） ========= */
+/* ========= ヒーローセクション ========= */
 .hero {
   text-align: center;
   padding: 4rem 2rem 2rem;
@@ -91,7 +94,7 @@ body {
   line-height: 1.8;
 }
 
-/* ========= リンクボタン ========= */
+/* ========= CTAリンクボタン群 ========= */
 .links {
   text-align: center;
   margin-top: 3rem;
@@ -123,7 +126,7 @@ footer {
   margin-top: 4rem;
 }
 
-/* ========= セクションタイトル ========= */
+/* ========= セクションタイトル（ページ共通） ========= */
 .section-title {
   background-color: #fff8f6;
   padding: 1.2rem 1.6rem;
@@ -134,13 +137,12 @@ footer {
 }
 
 .section-title h1 {
-  margin: 0;
   font-size: 1.8rem;
   color: #444;
   font-weight: 600;
 }
 
-/* ========= 記事詳細：見出しなど ========= */
+/* ========= 記事詳細ページ固有スタイル ========= */
 .article-detail h2 {
   font-size: 1.3rem;
   font-weight: 600;
@@ -155,15 +157,14 @@ footer {
   max-width: 90%;
 }
 
-/* ========= 製品一覧グリッド ========= */
-.product-grid,
+/* ========= グリッドリスト ========= */
 .item-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
+  margin: 2rem 0;
 }
 
-.product-card,
 .item-card {
   background: #fff;
   border: 1px solid #eee;
@@ -174,36 +175,32 @@ footer {
   transition: box-shadow 0.2s ease;
 }
 
-.product-card:hover,
 .item-card:hover {
   box-shadow: 0 0 8px rgba(0,0,0,0.08);
 }
 
-.product-card h2,
+.item-card img {
+  width: 100%;
+  border-radius: 6px;
+}
+
 .item-card h3 {
   font-size: 1.1rem;
-  margin: 0.5rem 0 0.3rem;
+  margin: 0.8rem 0 0.3rem;
 }
 
-.product-card p,
 .item-card p {
-  color: #666;
   font-size: 0.9rem;
-  margin: 0.5rem 0 0;
+  color: #666;
 }
 
-/* ========= テーブル・一覧・TOCなど共通 ========= */
-.toc ul {
-  padding-left: 1.2rem;
+.links .link-button {
+  display: inline-block;
+  margin: 0.4rem 0.6rem;
+  padding: 0.5rem 1rem;
+  background-color: #f0f0f0;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  color: #333;
+  text-decoration: none;
 }
-
-.toc ul li {
-  margin: 0.2rem 0;
-}
-
-.summary {
-  font-size: 0.95rem;
-  color: #555;
-  margin: 1rem 0 2rem;
-  line-height: 1.7;
-  max-width:
