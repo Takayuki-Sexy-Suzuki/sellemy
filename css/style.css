@@ -69,9 +69,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .site-nav .nav-link.active {
-  color: #000;
   font-weight: bold;
-  text-decoration: underline;
+  color: #000;
+  text-decoration: none; /* アンダーライン削除 */
+  cursor: default;        /* 矢印カーソルにしてリンクっぽさを消す */
+  pointer-events: none;   /* クリック不可にする */
 }
 
 /* ========= ヒーローセクション ========= */
