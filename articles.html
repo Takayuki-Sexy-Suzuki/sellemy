@@ -57,9 +57,11 @@
           card.className = 'article-card';
           card.innerHTML = `
             <img src="/img/${article.slug}/${article.slug}.png" alt="${article.title}" />
-            <span class="article-category">${mapCategory(article.category)}</span>
-            <h2>${article.title}</h2>
-            <p class="summary">${article.summary}</p>
+            <div class="article-text">
+              <span class="article-category">${mapCategory(article.category)}</span>
+              <h2>${article.title}</h2>
+              <p class="summary">${article.summary}</p>
+            </div>
           `;
           container.appendChild(card);
         });
