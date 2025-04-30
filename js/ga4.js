@@ -10,29 +10,42 @@ gtag('config', 'G-SZ5RQR5H7L', {
   transport_type: 'beacon'  // パフォーマンス改善
 });
 
-// ▼ここからクリック計測処理を追加
 document.addEventListener('DOMContentLoaded', function () {
   document.querySelectorAll('.link-button').forEach(function(link) {
     link.addEventListener('click', function(e) {
       const href = link.href;
       let label = '';
+      let platform = '';
 
+      // どのプラットフォームかを判定
       if (href.includes('amzn.to') || href.includes('amazon.co.jp')) {
-        label = 'amazon';
+        platform = 'amazon';
       } else if (href.includes('rakuten.co.jp') || href.includes('rakuten.ne.jp')) {
-        label = 'rakuten';
+        platform = 'rakuten';
       } else if (href.includes('shopping.yahoo.co.jp') || href.includes('yahoo.co.jp')) {
-        label = 'yahoo';
+        platform = 'yahoo';
       } else {
-        return; // 無関係なリンクは無視
+        return; // 無関係リンクは無視
       }
 
+      // 商品名（h3）を探す
+      let productName = '';
+      const card = link.closest('.item-card');
+      if (card) {
+        const h3 = card.querySelector('h3');
+        if (h3) {
+          productName = h3.textContent.trim();
+        }
+      }
+
+      // GA4に送信（custom paramも渡せる）
       gtag('event', 'click', {
         event_category: 'affiliate',
-        event_label: label
+        event_label: platform,
+        product_name: productName  // ← カスタムパラメータとして送信
       });
 
-      // 必要に応じて計測待ち処理も追加可能
+      // 必要に応じて遷移ディレイ（未使用ならコメントアウトのままでOK）
        e.preventDefault();
        setTimeout(() => window.open(href, '_blank'), 100);
     });
