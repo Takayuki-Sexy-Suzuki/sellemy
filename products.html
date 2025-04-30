@@ -10,6 +10,32 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.sellemy.jp/products.html" />
   <link rel="stylesheet" href="/css/style.css" />
+  <style>
+    .filter-controls {
+      text-align: center;
+      margin: 2rem 0 1rem;
+    }
+    .filter-controls button {
+      margin: 0 0.3rem;
+      padding: 0.4rem 0.8rem;
+      border: 1px solid #ccc;
+      background: #fff;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    .filter-controls button.active {
+      background: #f8f3f2;
+      border-color: #e0d6d2;
+      font-weight: bold;
+    }
+    .filter-controls .shuffle-button {
+      background-color: #fff0eb;
+      border: 1px solid #eacfc5;
+      font-weight: bold;
+      color: #7a554f;
+      margin-left: 1rem;
+    }
+  </style>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-SZ5RQR5H7L"></script>
   <script src="/js/ga4.js"></script>
 </head>
@@ -51,8 +77,7 @@
       <button onclick="filterCategory('beauty')" id="btn-beauty">美容</button>
       <button onclick="filterCategory('dailygoods')" id="btn-dailygoods">日用品</button>
       <button onclick="filterCategory('gadget')" id="btn-gadget">家電</button>
-      <span style="margin-left: 1rem;">|</span>
-      <button onclick="shuffleCurrentView()">シャッフル</button>
+      <button onclick="shuffleCurrentView()" class="shuffle-button">シャッフル</button>
     </div>
 
     <div class="article-list" id="productList"></div>
@@ -89,30 +114,34 @@
       });
     }
 
+    function shuffleArray(arr) {
+      for (let i = arr.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [arr[i], arr[j]] = [arr[j], arr[i]];
+      }
+      return arr;
+    }
+
     function filterCategory(category) {
       currentCategory = category;
       document.querySelectorAll('.filter-controls button').forEach(btn => btn.classList.remove('active'));
       document.getElementById(`btn-${category}`).classList.add('active');
-      const filtered = category === 'all' ? allProducts : allProducts.filter(p => p.category === category);
-      renderProducts(filtered);
+      const filtered = category === 'all' ? [...allProducts] : allProducts.filter(p => p.category === category);
+      renderProducts(shuffleArray(filtered));
     }
 
     function shuffleCurrentView() {
       const filtered = currentCategory === 'all'
         ? [...allProducts]
         : allProducts.filter(p => p.category === currentCategory);
-      for (let i = filtered.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [filtered[i], filtered[j]] = [filtered[j], filtered[i]];
-      }
-      renderProducts(filtered);
+      renderProducts(shuffleArray(filtered));
     }
 
     fetch('/json/products.json')
       .then(res => res.json())
       .then(data => {
         allProducts = data;
-        renderProducts(allProducts);
+        renderProducts(shuffleArray(allProducts));
       });
   </script>
 </body>
