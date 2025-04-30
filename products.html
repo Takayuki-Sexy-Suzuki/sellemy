@@ -3,22 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>記事一覧 - Sellemy</title>
-  <meta name="description" content="Sellemyがセレクトした美容・家電・日用品のおすすめ記事一覧。あなたにちょうどいい情報をカテゴリ別にお届けします。">
-  <meta property="og:title" content="記事一覧 - Sellemy" />
-  <meta property="og:description" content="Sellemyがセレクトした美容・家電・日用品のおすすめ記事一覧。">
-  <meta property="og:image" content="/ogp-image.jpg" />
+  <title>わたしにちょうどいい、出会えるモノ - Sellemy</title>
+  <meta name="description" content="Sellemyに掲載中のすべての商品一覧ページです。カテゴリでの絞り込みや、ランダムシャッフル表示も可能です。">
+  <meta property="og:title" content="わたしにちょうどいい、商品一覧 - Sellemy" />
+  <meta property="og:description" content="Sellemyに掲載中のすべての商品一覧ページです。カテゴリでの絞り込みや、ランダムシャッフル表示も可能です。">
   <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://www.sellemy.jp/articles.html" />
+  <meta property="og:url" content="https://www.sellemy.jp/products.html" />
   <link rel="stylesheet" href="/css/style.css" />
-  
-
-  <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-SZ5RQR5H7L"></script>
   <script src="/js/ga4.js"></script>
 </head>
-<body data-category="articles">
-
+<body data-category="products">
   <header class="site-header">
     <div class="brand">
       <a href="/index.html">
@@ -28,18 +23,37 @@
     </div>
     <nav class="site-nav">
       <ul class="nav-links">
-        <li><a href="/article/beauty/" class="nav-link" data-name="beauty">美容</a></li>
-        <li><a href="/article/dailygoods/" class="nav-link" data-name="dailygoods">日用品</a></li>
-        <li><a href="/article/gadget/" class="nav-link" data-name="gadget">家電</a></li>
-        <li><span class="nav-link active">記事一覧</span></li>
-        <li><a href="/products.html" class="nav-link" data-name="products">商品一覧</a></li>
+        <li><a href="/article/beauty/" class="nav-link">美容</a></li>
+        <li><a href="/article/dailygoods/" class="nav-link">日用品</a></li>
+        <li><a href="/article/gadget/" class="nav-link">家電</a></li>
+        <li><a href="/articles.html" class="nav-link">記事一覧</a></li>
+        <li><span class="nav-link active">商品一覧</span></li>
       </ul>
     </nav>
   </header>
 
   <main>
-    <div class="section-title"><h1>記事一覧</h1></div>
-    <div class="article-list" id="articleList"></div>
+    <div class="section-title">
+      <h1>わたしにちょうどいい、出会えるモノ</h1>
+    </div>
+
+    <section class="category-intro">
+      <p>
+        Sellemyで紹介しているすべての商品を、カテゴリを超えて一覧表示しています。<br>
+        思わぬ出会いや、新しい気づきを大切にしてほしいから、シャッフル表示にも対応。<br>
+        絞り込みたいときは、カテゴリボタンをクリックしてください。
+      </p>
+    </section>
+
+    <section class="filter-controls">
+      <button data-category="all" class="filter-button">すべて</button>
+      <button data-category="beauty" class="filter-button">美容</button>
+      <button data-category="dailygoods" class="filter-button">日用品</button>
+      <button data-category="gadget" class="filter-button">家電</button>
+      <button id="shuffleButton" class="filter-button">シャッフル</button>
+    </section>
+
+    <div class="article-list" id="productList"></div>
   </main>
 
   <footer>
@@ -47,36 +61,50 @@
   </footer>
 
   <script>
-    fetch('/json/articles.json')
+    let allProducts = [];
+
+    function shuffleArray(array) {
+      return [...array].sort(() => Math.random() - 0.5);
+    }
+
+    function renderProducts(products) {
+      const container = document.getElementById('productList');
+      container.innerHTML = '';
+      products.forEach(product => {
+        const card = document.createElement('a');
+        card.href = `/article/${product.category}/${product.slug}.html`;
+        card.className = 'article-card';
+        card.innerHTML = `
+          <div class="article-text">
+            <span class="article-category">${product.category}</span>
+            <h2>${product.title}</h2>
+            <p class="summary">${product.summary}</p>
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    fetch('/json/products.json')
       .then(res => res.json())
-      .then(articles => {
-        const container = document.getElementById('articleList');
-        articles.forEach(article => {
-          const card = document.createElement('a');
-          card.href = `/article/${article.category}/${article.slug}.html`;
-          card.className = 'article-card';
-          card.innerHTML = `
-            <img src="/img/${article.slug}/${article.slug}.png" alt="${article.title}" />
-            <div class="article-text">
-              <span class="article-category">${mapCategory(article.category)}</span>
-              <h2>${article.title}</h2>
-              <p class="summary">${article.summary}</p>
-            </div>
-          `;
-          container.appendChild(card);
-        });
+      .then(products => {
+        allProducts = products;
+        renderProducts(allProducts);
       });
 
-    function mapCategory(slug) {
-      switch (slug) {
-        case 'beauty': return '美容';
-        case 'gadget': return '家電';
-        case 'dailygoods':
-        case 'daily': return '日用品';
-        default: return slug;
-      }
-    }
+    document.querySelectorAll('.filter-button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const cat = btn.dataset.category;
+        if (cat === 'all') {
+          renderProducts(allProducts);
+        } else if (cat === undefined) {
+          renderProducts(shuffleArray(allProducts));
+        } else {
+          const filtered = allProducts.filter(p => p.category === cat);
+          renderProducts(filtered);
+        }
+      });
+    });
   </script>
-
 </body>
 </html>
