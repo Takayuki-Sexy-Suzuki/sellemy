@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>わたしにちょうどいい、出会えるモノ - Sellemy</title>
-  <meta name="description" content="Sellemyで紹介しているすべての商品を、カテゴリを超えて一覧表示しています。思いがけない出会いや、新しい気づきが生まれてほしいという想いを込めて構成しています。">
-  <meta property="og:title" content="わたしにちょうどいい、出会えるモノ - Sellemy" />
-  <meta property="og:description" content="Sellemyで紹介しているすべての商品を、カテゴリを超えて一覧表示しています。思いがけない出会いや、新しい気づきが生まれてほしいという想いを込めて構成しています。">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>商品一覧 - Sellemy</title>
+  <meta name="description" content="Sellemyで紹介しているすべての商品を一覧でご紹介。カテゴリを超えてシャッフル表示されるカセット型UIで、偶発的な出会いを楽しめます。">
+  <meta property="og:title" content="商品一覧 - Sellemy" />
+  <meta property="og:description" content="Sellemyで紹介しているすべての商品を一覧でご紹介。カテゴリを超えてシャッフル表示されるカセット型UIで、偶発的な出会いを楽しめます。">
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://www.sellemy.jp/products.html" />
   <link rel="stylesheet" href="/css/style.css" />
@@ -23,26 +23,29 @@
     </div>
     <nav class="site-nav">
       <ul class="nav-links">
-        <li><a href="/article/beauty/index.html" class="nav-link">美容</a></li>
-        <li><a href="/article/dailygoods/index.html" class="nav-link">日用品</a></li>
-        <li><a href="/article/gadget/index.html" class="nav-link">家電</a></li>
-        <li><a href="/articles.html" class="nav-link">記事一覧</a></li>
+        <li><a href="/article/beauty/" class="nav-link" data-name="beauty">美容</a></li>
+        <li><a href="/article/dailygoods/" class="nav-link" data-name="dailygoods">日用品</a></li>
+        <li><a href="/article/gadget/" class="nav-link" data-name="gadget">家電</a></li>
+        <li><a href="/articles.html" class="nav-link" data-name="articles">記事一覧</a></li>
         <li><span class="nav-link active">商品一覧</span></li>
       </ul>
     </nav>
   </header>
 
   <main>
-    <div class="section-title"><h1>わたしにちょうどいい、出会えるモノ</h1></div>
-    <div class="category-intro">
-      <p>
-        Sellemyで紹介しているすべての商品を、カテゴリを超えて一覧表示しています。<br>
-        思いがけない発見や、新しい気づきが生まれてほしいという想いを込めて構成。<br>
-        絞り込みをしたいときは、カテゴリボタンをクリックしてください。
-      </p>
+    <div class="section-title">
+      <h1>わたしにちょうどいい、出会えるモノ</h1>
     </div>
 
-    <div class="controls">
+    <section class="category-intro">
+      <p>
+        Sellemyで紹介しているすべての商品を、カテゴリを超えて一覧表示しています。<br>
+        思わぬ出会いや、新しい気づきが生まれてほしいという想いで、シャッフル表示にも対応。<br>
+        絞り込みを行いたい方は、カテゴリボタンをクリックしてください。
+      </p>
+    </section>
+
+    <div class="filter-controls">
       <button onclick="filterCategory('all')">すべて</button>
       <button onclick="filterCategory('beauty')">美容</button>
       <button onclick="filterCategory('dailygoods')">日用品</button>
@@ -60,27 +63,25 @@
   <script>
     let allProducts = [];
 
-    function shuffle(array) {
-      for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-      }
-      return array;
-    }
+    const categoryMap = {
+      beauty: '美容',
+      dailygoods: '日用品',
+      gadget: '家電'
+    };
 
-    function renderProducts(products) {
-      const container = document.getElementById('productList');
-      container.innerHTML = '';
-      products.forEach(product => {
-        const card = document.createElement('a');
-        card.href = `/article/${product.category}/${product.articleSlug}.html`;
+    function renderProducts(data) {
+      const list = document.getElementById('productList');
+      list.innerHTML = '';
+      data.forEach(product => {
+        const card = document.createElement('div');
         card.className = 'item-card';
         card.innerHTML = `
-          <div class="product-category">${product.category}</div>
+          <img src="${product.imageUrl}" alt="${product.name}">
+          <span class="article-category">${categoryMap[product.category] || ''}</span>
           <h3>${product.name}</h3>
-          <p>${product.articleTitle}</p>
+          <p><a href="/article/${product.category}/${product.articleSlug}.html">${product.articleTitle}</a></p>
         `;
-        container.appendChild(card);
+        list.appendChild(card);
       });
     }
 
@@ -94,7 +95,11 @@
     }
 
     function shuffleProducts() {
-      const shuffled = shuffle([...allProducts]);
+      const shuffled = [...allProducts];
+      for (let i = shuffled.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+      }
       renderProducts(shuffled);
     }
 
