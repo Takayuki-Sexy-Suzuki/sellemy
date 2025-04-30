@@ -46,11 +46,13 @@
     </section>
 
     <div class="filter-controls">
-      <button onclick="filterCategory('all')">すべて</button>
-      <button onclick="filterCategory('beauty')">美容</button>
-      <button onclick="filterCategory('dailygoods')">日用品</button>
-      <button onclick="filterCategory('gadget')">家電</button>
-      <button onclick="shuffleProducts()">シャッフル</button>
+      <span>絞り込み：</span>
+      <button onclick="filterCategory('all')" id="btn-all" class="active">すべて</button>
+      <button onclick="filterCategory('beauty')" id="btn-beauty">美容</button>
+      <button onclick="filterCategory('dailygoods')" id="btn-dailygoods">日用品</button>
+      <button onclick="filterCategory('gadget')" id="btn-gadget">家電</button>
+      <span style="margin-left: 1rem;">|</span>
+      <button onclick="shuffleCurrentView()">シャッフル</button>
     </div>
 
     <div class="article-list" id="productList"></div>
@@ -62,6 +64,7 @@
 
   <script>
     let allProducts = [];
+    let currentCategory = 'all';
 
     const categoryMap = {
       beauty: '美容',
@@ -73,34 +76,36 @@
       const list = document.getElementById('productList');
       list.innerHTML = '';
       data.forEach(product => {
-        const card = document.createElement('div');
+        const card = document.createElement('a');
         card.className = 'item-card';
+        card.href = `/article/${product.category}/${product.articleSlug}.html`;
         card.innerHTML = `
           <img src="${product.imageUrl}" alt="${product.name}">
           <span class="article-category">${categoryMap[product.category] || ''}</span>
           <h3>${product.name}</h3>
-          <p><a href="/article/${product.category}/${product.articleSlug}.html">${product.articleTitle}</a></p>
+          <p>${product.articleTitle}</p>
         `;
         list.appendChild(card);
       });
     }
 
     function filterCategory(category) {
-      if (category === 'all') {
-        renderProducts(allProducts);
-      } else {
-        const filtered = allProducts.filter(p => p.category === category);
-        renderProducts(filtered);
-      }
+      currentCategory = category;
+      document.querySelectorAll('.filter-controls button').forEach(btn => btn.classList.remove('active'));
+      document.getElementById(`btn-${category}`).classList.add('active');
+      const filtered = category === 'all' ? allProducts : allProducts.filter(p => p.category === category);
+      renderProducts(filtered);
     }
 
-    function shuffleProducts() {
-      const shuffled = [...allProducts];
-      for (let i = shuffled.length - 1; i > 0; i--) {
+    function shuffleCurrentView() {
+      const filtered = currentCategory === 'all'
+        ? [...allProducts]
+        : allProducts.filter(p => p.category === currentCategory);
+      for (let i = filtered.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
-        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+        [filtered[i], filtered[j]] = [filtered[j], filtered[i]];
       }
-      renderProducts(shuffled);
+      renderProducts(filtered);
     }
 
     fetch('/json/products.json')
