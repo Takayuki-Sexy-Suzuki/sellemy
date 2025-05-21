@@ -446,11 +446,11 @@ footer {
 }
 
 .more-link {
-  margin-top: 1em;
+  margin-top: 0.5em; /* 間隔を少し狭くしてつながりを強調 */
   text-align: right;
 }
 .more-link a {
-  color: #007acc;
+  color: #0077cc; /* 少し濃いブルーにして視認性UP（好みで調整可） */
   font-weight: bold;
   text-decoration: none;
 }
