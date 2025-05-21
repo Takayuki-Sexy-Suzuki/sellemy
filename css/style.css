@@ -444,3 +444,16 @@ footer {
 .toc li a:hover {
   text-decoration: underline;
 }
+
+.more-link {
+  margin-top: 1em;
+  text-align: right;
+}
+.more-link a {
+  color: #007acc;
+  font-weight: bold;
+  text-decoration: none;
+}
+.more-link a:hover {
+  text-decoration: underline;
+}
