@@ -1,5 +1,19 @@
 [
   {
+    "title": "乾燥肌に効果的な夜の美容法",
+    "slug": "night-skincare-dry-skin",
+    "category": "beauty",
+    "img": "",
+    "summary": "乾燥肌に悩む方必見の夜の美容法をご紹介します。保湿パックで肌をしっかりケアし、潤いを与えましょう。"
+  },
+  {
+    "title": "夏の肌疲れに最適！ビタミンE美容液6選",
+    "slug": "best-vitamin-e-serums-for-summer",
+    "category": "beauty",
+    "img": "https://www.sellemy.jp/img/best-vitamin-e-serums-for-summer/best-vitamin-e-serums-for-summer.png",
+    "summary": "夏の肌疲れを癒すビタミンE美容液を厳選しました。健康的で美しい肌を手に入れましょう。"
+  },
+  {
     "title": "夏の疲れを癒す！フットマッサージャー6選",
     "slug": "foot-massagers-for-summer-relaxation-6-picks",
     "category": "dailygoods",
@@ -25,7 +39,7 @@
     "slug": "vacuum-cleaner",
     "category": "gadget",
     "img": "",
-    "summary": "最新の掃除機の選び方を解説し、あなたにぴったりの掃除機を見つける手助けをします。"
+    "summary": "最新の掃除機の選び方を解説し、あなたにぴったりの掃除機を見つけるお手伝いをします。"
   },
   {
     "title": "夏場の快適生活！扇風機6選",
@@ -47,6 +61,13 @@
     "category": "gadget",
     "img": "https://www.sellemy.jp/img/air-purifiers-top-6/air-purifiers-top-6.png",
     "summary": "冷暖房効率を上げるための空気清浄機を厳選して紹介します。健康で快適な室内環境作りにお役立てください。"
+  },
+  {
+    "title": "夏の紫外線対策！日焼け止めクリーム6選",
+    "slug": "summer-sunscreen-top6",
+    "category": "beauty",
+    "img": "https://www.sellemy.jp/img/summer-sunscreen-top6/summer-sunscreen-top6.png",
+    "summary": "夏の紫外線から肌を守るため、効果的な日焼け止めクリームを6種類ご紹介します。肌タイプに合わせた選び方も解説します。"
   },
   {
     "title": "初心者に優しい！コーヒーメーカー6選",
