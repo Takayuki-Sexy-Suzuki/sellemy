@@ -1,5 +1,12 @@
 [
   {
+    "title": "髪に潤いを与える！ヘアオイル6選",
+    "slug": "best-hair-oils-for-moisture-6-choices",
+    "category": "beauty",
+    "img": "https://www.sellemy.jp/img/best-hair-oils-for-moisture-6-choices/best-hair-oils-for-moisture-6-choices.png",
+    "summary": "髪の乾燥を防ぎ、潤いを与えるおすすめのヘアオイルを6つ厳選してご紹介します。健康的な髪を手に入れましょう。"
+  },
+  {
     "title": "手軽に料理！おすすめの調理器具6選",
     "slug": "best-cooking-tools-6-selection",
     "category": "dailygoods",
@@ -18,35 +25,28 @@
     "slug": "summer-skin-protection-primers-6-choices",
     "category": "beauty",
     "img": "https://www.sellemy.jp/img/summer-skin-protection-primers-6-choices/summer-skin-protection-primers-6-choices.png",
-    "summary": "夏にぴったりの化粧下地を6選ご紹介。暑さや湿気から美肌を守るアイテムを見つけましょう。"
-  },
-  {
-    "title": "乾燥肌に効果的な夜の美容法",
-    "slug": "night-skincare-dry-skin",
-    "category": "beauty",
-    "img": "",
-    "summary": "乾燥肌に悩む方へ。夜のスキンケアで保湿パックを取り入れ、潤いのある肌を手に入れましょう。"
+    "summary": "夏の暑さから肌を守るためのおすすめ化粧下地6選をご紹介します。快適なメイクをサポートします。"
   },
   {
     "title": "夏の肌に潤いを！アフターサンローション6選",
     "slug": "after-sun-lotion-6-choices",
     "category": "beauty",
     "img": "https://www.sellemy.jp/img/after-sun-lotion-6-choices/after-sun-lotion-6-choices.png",
-    "summary": "夏の紫外線から肌を守るために、アフターサンローションのおすすめ6選をご紹介します。潤いを与えて健やかな素肌を保ちましょう。"
+    "summary": "夏の紫外線から肌を守るためのアフターサンローションを厳選してご紹介します。潤いを与え、健やかな素肌を保ちましょう。"
   },
   {
     "title": "夏を彩る！ネイルポリッシュ6選",
     "slug": "summer-nail-polish-6-selection",
     "category": "beauty",
     "img": "https://www.sellemy.jp/img/summer-nail-polish-6-selection/summer-nail-polish-6-selection.png",
-    "summary": "夏にぴったりなネイルポリッシュを6つ厳選しました。鮮やかなカラーで指先から季節を楽しみましょう。"
+    "summary": "夏にぴったりのネイルポリッシュを6つ厳選しました。鮮やかな色合いで、指先から夏を楽しんでみませんか？"
   },
   {
     "title": "夏の清涼感を演出！涼感寝具6選",
     "slug": "cool-bedding-6-selection",
     "category": "dailygoods",
     "img": "https://www.sellemy.jp/img/cool-bedding-6-selection/cool-bedding-6-selection.png",
-    "summary": "暑い夏を快適に過ごすための涼感寝具を厳選しました。自然な涼しさを感じられるアイテムで、快適な夜をお楽しみください。"
+    "summary": "暑い夏を快適に過ごすための涼感寝具を厳選しました。心地よい眠りをサポートするアイテムをご紹介します。"
   },
   {
     "title": "夏の肌疲れに最適！ビタミンE美容液6選",
@@ -138,13 +138,6 @@
     "category": "beauty",
     "img": "https://www.sellemy.jp/img/summer-refresh-body-scrubs-6-picks/summer-refresh-body-scrubs-6-picks.png",
     "summary": "夏の肌をリフレッシュするためのボディスクラブを6つ厳選してご紹介します。心地よいケアで、美しい肌を手に入れましょう。"
-  },
-  {
-    "title": "最新の掃除機の選び方",
-    "slug": "vacuum-cleaner",
-    "category": "gadget",
-    "img": "",
-    "summary": "最新の掃除機の選び方を解説し、あなたにぴったりの掃除機を見つけるお手伝いをします。"
   },
   {
     "title": "夏場の快適生活！扇風機6選",
