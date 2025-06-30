@@ -156,7 +156,7 @@ footer {
   margin: 0.8rem 0 0.8rem;
   text-align: left;
   display: block;
-  max-width: 90%;
+  max-width: 100%;
 }
 
 /* ========= グリッドリスト ========= */
@@ -438,7 +438,7 @@ footer {
 .toc li a {
   color: #4a4a4a;
   text-decoration: none;
-  font-size: 0.95rem;
+  font-size: 0.85rem;
 }
 
 .toc li a:hover {
