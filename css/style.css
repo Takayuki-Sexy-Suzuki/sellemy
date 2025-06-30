@@ -71,9 +71,9 @@ h1, h2, h3, h4, h5, h6 {
 .site-nav .nav-link.active {
   font-weight: bold;
   color: #000;
-  text-decoration: none; /* アンダーライン削除 */
-  cursor: default;        /* 矢印カーソルにしてリンクっぽさを消す */
-  pointer-events: none;   /* クリック不可にする */
+  text-decoration: none;
+  cursor: default;
+  pointer-events: none;
 }
 
 /* ========= ヒーローセクション ========= */
@@ -184,8 +184,8 @@ footer {
 .item-card img {
   width: 100%;
   height: auto;
-  max-height: 280px; /* 推奨：必要に応じて調整 */
-  object-fit: contain; /* coverだと切れる可能性あり */
+  max-height: 280px;
+  object-fit: contain;
   display: block;
   border-radius: 6px;
 }
@@ -249,7 +249,6 @@ footer {
 }
 
 /* ========= 記事詳細レイアウト補強 ========= */
-
 .article-detail main {
   max-width: 1000px;
   margin: 0 auto;
@@ -382,7 +381,7 @@ footer {
   font-size: 0.9rem;
   color: #666;
   line-height: 1.6;
-  margin-top: auto; /* 下に寄せる */
+  margin-top: auto;
 }
 
 /* ========= カテゴリトップ用スタイル ========= */
@@ -448,24 +447,25 @@ footer {
 .more-link {
   margin-top: 0.5em;
   text-align: left;
-  padding-left: 1.5em; /* リストのインデントと揃える */
+  padding-left: 1.5em;
 }
+
 .more-link a {
-  color: #0077cc; /* 少し濃いブルーにして視認性UP（好みで調整可） */
+  color: #0077cc;
   font-weight: bold;
   text-decoration: none;
 }
+
 .more-link a:hover {
   text-decoration: underline;
 }
 
+/* ========= モバイル対応 ========= */
 @media screen and (max-width: 768px) {
   .tagline {
     display: none;
   }
-}
 
-@media (max-width: 768px) {
   .site-header {
     flex-direction: column;
     align-items: center;
@@ -497,20 +497,19 @@ footer {
   .site-nav .nav-link {
     font-size: 0.85rem;
   }
-}
 
-@media screen and (max-width: 768px) {
-  .link-button[href*="rakuten.co.jp"] {
-    display: none;
+  /* ✅ スマホで楽天リンク非表示 */
+  .article-detail .links a[href*="rakuten"] {
+    display: none !important;
   }
 }
 
 @media screen and (max-width: 600px) {
   h1 {
-    font-size: 1.3rem  !important; /* 例：デフォルトが1.8rem → 少し控えめに */
+    font-size: 1.3rem  !important;
   }
 
   h2 {
-    font-size: 1.0rem  !important; /* デフォルト1.3remならこれでスッキリ */
+    font-size: 1.0rem  !important;
   }
 }
