@@ -513,3 +513,14 @@ footer {
     font-size: 1.0rem  !important;
   }
 }
+
+@media screen and (max-width: 768px) {
+  .site-nav .nav-links {
+    flex-wrap: nowrap;          /* ✅ 改行させない */
+    overflow-x: auto;           /* ✅ 横スクロール対応（必要に応じて） */
+  }
+
+  .site-nav .nav-links li {
+    white-space: nowrap;        /* ✅ テキストを折り返さない */
+  }
+}
