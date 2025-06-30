@@ -504,3 +504,13 @@ footer {
     display: none;
   }
 }
+
+@media screen and (max-width: 600px) {
+  h1 {
+    font-size: 1.4rem; /* 例：デフォルトが1.8rem → 少し控えめに */
+  }
+
+  h2 {
+    font-size: 1.1rem; /* デフォルト1.3remならこれでスッキリ */
+  }
+}
