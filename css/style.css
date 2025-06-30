@@ -499,3 +499,8 @@ footer {
   }
 }
 
+@media screen and (max-width: 768px) {
+  .link-button[href*="rakuten.co.jp"] {
+    display: none;
+  }
+}
